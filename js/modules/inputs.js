@@ -1,4 +1,4 @@
-const setInputs = () => {
+const inputs = () => {
     const inputs = document.querySelectorAll(".input__field");
 
     if (inputs.length) {
@@ -15,4 +15,4 @@ const setInputs = () => {
     }
 };
 
-export default setInputs;
+export default inputs;

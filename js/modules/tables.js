@@ -1,4 +1,4 @@
-const alignTables = () => {
+const tables = () => {
     const tables = document.querySelectorAll(".table__content");
 
     if (tables.length) {
@@ -13,4 +13,4 @@ const alignTables = () => {
     }
 };
 
-export default alignTables;
+export default tables;

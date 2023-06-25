@@ -115,22 +115,75 @@
                         </button>
                     </div>
                     <div class="payments-filters">
-                        <button class="button button__outline icon-right">
-                            <span>Фильтры</span>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.1193 11.8391C14.4254 11.8391 15.4827 12.8978 15.4827 14.2032C15.4827 15.5094 14.4254 16.568 13.1193 16.568C11.813 16.568 10.7547 15.5094 10.7547 14.2032C10.7547 12.8978 11.813 11.8391 13.1193 11.8391Z" stroke="#8A8E98" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round" />
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.86456 3.43124C9.1708 3.43124 10.2294 4.48991 10.2294 5.79611C10.2294 7.10153 9.1708 8.1602 7.86456 8.1602C6.55836 8.1602 5.5 7.1016 5.5 5.79618C5.5 4.48997 6.55836 3.43124 7.86456 3.43124Z" stroke="#8A8E98" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M3.18439 5.79688H5.50021M10.2283 5.79688H17.5844" stroke="#8A8E98" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M3.18439 14.2031H10.7546M15.4827 14.2031H17.5844" stroke="#8A8E98" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <label class="search">
+                        <div class="filter">
+                            <button class="button button__outline icon-right filter-button">
+                                <span>Фильтры</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M13.1193 11.8391C14.4254 11.8391 15.4827 12.8978 15.4827 14.2032C15.4827 15.5094 14.4254 16.568 13.1193 16.568C11.813 16.568 10.7547 15.5094 10.7547 14.2032C10.7547 12.8978 11.813 11.8391 13.1193 11.8391Z"
+                                        stroke="#8A8E98" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M7.86456 3.43124C9.1708 3.43124 10.2294 4.48991 10.2294 5.79611C10.2294 7.10153 9.1708 8.1602 7.86456 8.1602C6.55836 8.1602 5.5 7.1016 5.5 5.79618C5.5 4.48997 6.55836 3.43124 7.86456 3.43124Z"
+                                        stroke="#8A8E98" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M3.18439 5.79688H5.50021M10.2283 5.79688H17.5844" stroke="#8A8E98" stroke-width="1.44"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M3.18439 14.2031H10.7546M15.4827 14.2031H17.5844" stroke="#8A8E98" stroke-width="1.44"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <div class="filter__wrapper">
+                                <div class="filter__block">
+                                    <div class="filter__fields">
+                                        <label class="input">
+                                            <p class="input__placeholder">Валюта</p>
+                                            <input class="input__field" type="text">
+                                            <p class="input__description"></p>
+                                        </label>
+                                        <label class="input">
+                                            <p class="input__placeholder">Валюта</p>
+                                            <input class="input__field" type="text">
+                                            <p class="input__description"></p>
+                                        </label>
+                                        <label class="input">
+                                            <p class="input__placeholder">Валюта</p>
+                                            <input class="input__field" type="text">
+                                            <p class="input__description"></p>
+                                        </label>
+                                        <label class="input">
+                                            <p class="input__placeholder">Валюта</p>
+                                            <input class="input__field" type="text">
+                                            <p class="input__description"></p>
+                                        </label>
+                                        <label class="input">
+                                            <p class="input__placeholder">Валюта</p>
+                                            <input class="input__field" type="text">
+                                            <p class="input__description"></p>
+                                        </label>
+                                        <label class="input">
+                                            <p class="input__placeholder">Валюта</p>
+                                            <input class="input__field" type="text">
+                                            <p class="input__description"></p>
+                                        </label>
+                                        <label class="input">
+                                            <p class="input__placeholder">Валюта</p>
+                                            <input class="input__field" type="text">
+                                            <p class="input__description"></p>
+                                        </label>
+                                    </div>
+                                    <div class="filter__buttons">
+                                        <button class="button button__secondary">Сбросить</button>
+                                        <button class="button button__primary" disabled>Применить</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search">
                             <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.69368 2.5C13.5678 2.5 16.7083 5.64039 16.7083 9.51458C16.7083 13.3888 13.5678 16.53 9.69368 16.53C5.81944 16.53 2.67905 13.3888 2.67905 9.51458C2.67905 5.64039 5.81944 2.5 9.69368 2.5Z" stroke="#8A8E98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M14.4677 14.6533L17.3219 17.5002" stroke="#8A8E98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                             <input class="search__input" type="text" placeholder="Поиск">
-                        </label>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -522,7 +575,9 @@
         <div class="modal create-payment">
             <div class="modal__wrapper create-payment__wrapper">
                 <button class="modal__close">
-                    <img src="/assets/img/close.svg" alt="Закрыть">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.53033 4.46967C5.23744 4.17678 4.76256 4.17678 4.46967 4.46967C4.17678 4.76256 4.17678 5.23744 4.46967 5.53033L8.93934 10L4.46967 14.4697C4.17678 14.7626 4.17678 15.2374 4.46967 15.5303C4.76256 15.8232 5.23744 15.8232 5.53033 15.5303L10 11.0607L14.4697 15.5303C14.7626 15.8232 15.2374 15.8232 15.5303 15.5303C15.8232 15.2374 15.8232 14.7626 15.5303 14.4697L11.0607 10L15.5303 5.53033C15.8232 5.23744 15.8232 4.76256 15.5303 4.46967C15.2374 4.17678 14.7626 4.17678 14.4697 4.46967L10 8.93934L5.53033 4.46967Z" fill="white" />
+                    </svg>
                 </button>
                 <form class="create-payment__content">
                     <h4 class="modal__title">Новый платеж</h4>

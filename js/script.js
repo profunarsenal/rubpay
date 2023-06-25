@@ -1,37 +1,13 @@
-import alignTables from "./modules/tables.js";
-import setModals from "./modules/modals.js";
-import setInputs from "./modules/inputs.js";
+import tables from "./modules/tables.js";
+import modals from "./modules/modals.js";
+import inputs from "./modules/inputs.js";
+import filters from "./modules/filters.js";
+import tabs from "./modules/tabs.js";
+import sidebar from "./modules/sidebar.js";
 
-setModals();
-setInputs();
-alignTables();
-
-const sidebar = document.querySelector(".sidebar");
-const container = document.querySelector(".container");
-const logo = document.querySelector(".logo");
-const buttonCollapseSidebar = document.querySelector(".sidebar__collapse-button");
-
-if (buttonCollapseSidebar) {
-    buttonCollapseSidebar.addEventListener("click", () => {
-        sidebar.classList.toggle("collapse");
-        logo.classList.toggle("collapse");
-        container.classList.toggle("collapse");
-    });
-}
-
-const tabsCheckoutInfo = document.querySelector(".checkout-info__tabs")
-const tabPayment = document.getElementById("tab-payment");
-const tabPayout = document.getElementById("tab-payout");
-
-if (tabPayout) {
-    tabPayout.addEventListener("click", () => {
-        tabsCheckoutInfo.classList.add("toggle");
-    });
-}
-
-if (tabPayment) {
-    tabPayment.addEventListener("click", () => {
-        tabsCheckoutInfo.classList.remove("toggle");
-    });
-}
-///
+modals();
+inputs();
+tables();
+filters();
+tabs();
+sidebar();

@@ -1,4 +1,4 @@
-const setModals = () => {
+const modals = () => {
     const modals = ["new-checkout", "checkout-info", "create-payment"];
 
     const openModal = (modal) => {
@@ -28,4 +28,4 @@ const setModals = () => {
     }
 };
 
-export default setModals;
+export default modals;
