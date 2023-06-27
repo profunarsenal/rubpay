@@ -33,3 +33,15 @@
         url("../fonts/SuisseIntl-Medium.woff") format("woff"),
         url("../fonts/SuisseIntl-Medium.svg") format("svg");
 }
+
+@font-face {
+    font-family: "Suisse Int'l";
+    font-weight: 600;
+    src: url("../fonts/SuisseIntl-SemiBold.otf"),
+        url("../fonts/SuisseIntl-SemiBold.eot"),
+        url("../fonts/SuisseIntl-SemiBold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/SuisseIntl-SemiBold.ttf") format("truetype"),
+        url("../fonts/SuisseIntl-SemiBold.woff2") format("woff2"),
+        url("../fonts/SuisseIntl-SemiBold.woff") format("woff"),
+        url("../fonts/SuisseIntl-SemiBold.svg") format("svg");
+}

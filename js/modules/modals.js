@@ -1,14 +1,27 @@
 const modals = () => {
-    const modals = ["new-checkout", "checkout-info", "create-payment"];
+    const modals = [
+        "new-checkout",
+        "checkout-info",
+        "create-payment",
+        "export",
+        "payments-info",
+        "edit-checkout",
+    ];
 
     const openModal = (modal) => {
+        const modalWrap = modal.querySelector('.modal__wrapper');
         modal.classList.add("open");
         document.body.classList.add("open");
+
+        if (modalWrap.clientHeight >= document.body.clientHeight) {
+            modal.classList.add("top");
+        }
     };
 
     const closeModal = (modal) => {
         modal.classList.remove("open");
         document.body.classList.remove("open");
+        modal.classList.remove("top");
     };
 
     if (modals.length) {
