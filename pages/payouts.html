@@ -203,47 +203,49 @@
                             </div>
                         </div>
                     </div>
-                    <div class="payments__footer">
-                        <div class="payments__total-block">
-                            <div class="payments__total">
-                                Общее количество:
-                                <span class="payments__total-count">561</span>
-                            </div>
-                            <div class="payments__count">
-                                Показано:
-                                <span class="payments__count-current">50</span>
-                            </div>
-                        </div>
-                        <div class="pagination">
-                            <button class="pagination__button pagination__button-prev"">
-                                        <svg width=" 24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M13.7273 7.26898C14.0909 7.62763 14.0909 8.20911 13.7273 8.56775L10.2477 12L13.7273 15.4322C14.0909 15.7909 14.0909 16.3724 13.7273 16.731C13.3637 17.0897 12.7742 17.0897 12.4106 16.731L8.27269 12.6494C7.9091 12.2907 7.9091 11.7093 8.27269 11.3506L12.4106 7.26898C12.7742 6.91034 13.3637 6.91034 13.7273 7.26898Z"
-                                    fill="#8A8E98" fill-opacity="0.6" />
-                                </svg>
-                            </button>
-                            <ul class="pagination__list">
-                                <li class="pagination__item active">1</li>
-                                <li class="pagination__item">2</li>
-                                <li class="pagination__item">3</li>
-                                <li class="pagination__item">4</li>
-                                <li class="pagination__item">5</li>
-                            </ul>
-                            <button class="pagination__button pagination__button-next">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M10.2727 7.26898C10.6363 6.91034 11.2258 6.91034 11.5894 7.26898L15.7273 11.3506C16.0909 11.7093 16.0909 12.2907 15.7273 12.6494L11.5894 16.731C11.2258 17.0897 10.6363 17.0897 10.2727 16.731C9.9091 16.3724 9.9091 15.7909 10.2727 15.4322L13.7523 12L10.2727 8.56775C9.9091 8.20911 9.9091 7.62763 10.2727 7.26898Z"
-                                        fill="#8A8E98" fill-opacity="0.6" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </main>
             <footer class="footer">
-                <a class="footer__text" href="#">Документация API</a>
-                <span class="footer__text">© 2023 RubPay, Inc</span>
+                <div class="pagination">
+                    <div class="pagination__info">
+                        <div>
+                            <span>Общее количество:</span>
+                            <span class="pagination__count">561</span>
+                        </div>
+                        <div>
+                            <span>Показано:</span>
+                            <span class="pagination__count">50</span>
+                        </div>
+                    </div>
+                    <div class="pagination__navigation">
+                        <button class="pagination__button pagination__button-prev"">
+                                    <svg width=" 24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M13.7273 7.26898C14.0909 7.62763 14.0909 8.20911 13.7273 8.56775L10.2477 12L13.7273 15.4322C14.0909 15.7909 14.0909 16.3724 13.7273 16.731C13.3637 17.0897 12.7742 17.0897 12.4106 16.731L8.27269 12.6494C7.9091 12.2907 7.9091 11.7093 8.27269 11.3506L12.4106 7.26898C12.7742 6.91034 13.3637 6.91034 13.7273 7.26898Z"
+                                fill="#8A8E98" fill-opacity="0.6" />
+                            </svg>
+                        </button>
+                        <ul class="pagination__list">
+                            <li class="pagination__item active">1</li>
+                            <li class="pagination__item">2</li>
+                            <li class="pagination__item">3</li>
+                            <li class="pagination__item">4</li>
+                            <li class="pagination__item">5</li>
+                        </ul>
+                        <button class="pagination__button pagination__button-next">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M10.2727 7.26898C10.6363 6.91034 11.2258 6.91034 11.5894 7.26898L15.7273 11.3506C16.0909 11.7093 16.0909 12.2907 15.7273 12.6494L11.5894 16.731C11.2258 17.0897 10.6363 17.0897 10.2727 16.731C9.9091 16.3724 9.9091 15.7909 10.2727 15.4322L13.7523 12L10.2727 8.56775C9.9091 8.20911 9.9091 7.62763 10.2727 7.26898Z"
+                                    fill="#8A8E98" fill-opacity="0.6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="footer__content">
+                    <a class="footer__text" href="#">Документация API</a>
+                    <span class="footer__text">© 2023 RubPay, Inc</span>
+                </div>
             </footer>
         </div>
         <div class="modal payouts-export">

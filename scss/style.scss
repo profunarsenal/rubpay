@@ -351,7 +351,28 @@ body {
 .pagination {
     display: flex;
     align-items: center;
-    gap: 4px;
+    justify-content: space-between;
+    padding: 16px 40px;
+    margin-top: auto;
+    border-bottom: 1px solid $gray-light;
+
+    &__info {
+        display: flex;
+        gap: 20px;
+        font-weight: 450;
+        font-size: 12px;
+        line-height: 20px;
+    }
+    
+    &__count {
+        color: $gray-dark;
+    }
+
+    &__navigation {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
 
     &__button {
         width: 28px;
@@ -465,11 +486,14 @@ body {
 // FOOTER
 .footer {
     margin-top: auto;
-    padding: 12px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     border-top: 1px solid $gray-light;
+
+    &__content {
+        padding: 12px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     &__text {
         font-weight: 450;
@@ -731,7 +755,8 @@ body {
     }
 
     &__table-content {
-        height: 364px;
+        position: relative;
+        height: calc(100vh - 176px);
         overflow-y: auto;
     }
 
@@ -779,6 +804,13 @@ body {
         &.hide {
             display: none;
         }
+    }
+
+    &__total {
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+        background-color: $white;
     }
 }
 
@@ -884,7 +916,7 @@ body {
 
 .payments {
     &__table-content {
-        height: 390px;
+        height: calc(100vh - 237px);
         overflow-y: auto;
     }
 
@@ -933,28 +965,6 @@ body {
 
     &__time {
         color: $gray-light;
-    }
-
-    &__footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 16px 40px;
-        margin-top: auto;
-        border-top: 1px solid $gray-light;
-    }
-
-    &__total-block {
-        display: flex;
-        gap: 20px;
-        font-weight: 450;
-        font-size: 12px;
-        line-height: 20px;
-    }
-
-    &__total-count,
-    &__count-current {
-        color: $gray-dark;
     }
 }
 
@@ -1025,7 +1035,7 @@ body {
 // PAYOUTS
 .payouts {
     &__table-content {
-        height: 380px;
+        height: calc(100vh - 237px);
         overflow-y: auto;
     }
 
