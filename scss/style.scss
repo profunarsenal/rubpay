@@ -3,12 +3,10 @@
 @import "variables.scss";
 
 // BASE
-* {
-    scrollbar-color: rgba($gray-dark, 0.8) rgba($gray-light, 0.8);
-    /*Цвет скролла, цвет ползунка*/
-    scrollbar-width: thin;
-    /*Толщина скролла thin, auto*/
-}
+// * {
+//     scrollbar-color: rgba($gray-dark, 0.8) rgba($gray-light, 0.8);
+//     scrollbar-width: thin;
+// }
 
 body {
     font-family: "Suisse Int'l";
@@ -20,19 +18,19 @@ body {
     }
 }
 
-body::-webkit-scrollbar {
-    width: 8px;
-}
+// body::-webkit-scrollbar {
+//     width: 8px;
+// }
 
-body::-webkit-scrollbar-track {
-    border-radius: 4px;
-    background-color: rgba($gray-light, 0.8);
-}
+// body::-webkit-scrollbar-track {
+//     border-radius: 4px;
+//     background-color: rgba($gray-light, 0.8);
+// }
 
-body::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba($gray-dark, 0.8)
-}
+// body::-webkit-scrollbar-thumb {
+//     border-radius: 4px;
+//     background-color: rgba($gray-dark, 0.8)
+// }
 
 .wrapper {
     position: relative;
@@ -434,6 +432,32 @@ body::-webkit-scrollbar-thumb {
         }
     }
 }
+
+.tooltip {
+    position: absolute;
+    z-index: 99;
+    padding: 8px 10px;
+    font-size: 12px;
+    line-height: 16px;
+    color: $white;
+    border-radius: 10px;
+    background-color: $gray-dark;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -6px;
+        background-color: $gray-dark;
+        width: 9px;
+        height: 9px;
+        transform: rotate(45deg) translateY(-50%);
+    }
+}
 // HEADER
 .header {
     padding: 24px 40px 16px 40px;
@@ -526,36 +550,14 @@ body::-webkit-scrollbar-thumb {
     }
 
     &__item-tooltip {
-        position: absolute;
-        top: -8px;
-        right: 0;
-        padding: 8px 10px;
-        font-size: 12px;
-        line-height: 16px;
-        color: $white;
-        border-radius: 10px;
-        background-color: $gray-dark;
-        white-space: nowrap;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transform: translateX(106%);
-        transition: all 0.3s ease;
-        &::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: -6px;
-            background-color: $gray-dark;
-            width: 9px;
-            height: 9px;
-            transform: rotate(45deg) translateY(-50%);
-        }
+        top: -7px;
+        left: 30px;
     }
 }
 // SIDEBAR
 .sidebar {
     position: fixed;
+    z-index: 99;
     top: 0;
     left: 0;
     display: flex;
@@ -574,7 +576,7 @@ body::-webkit-scrollbar-thumb {
         .logo__main {
             display: none;
         }
-        .sidebar__collapse-button {
+        .sidebar__collapse-icon {
             transform: rotate(180deg);
         }
         .logo {
@@ -582,6 +584,11 @@ body::-webkit-scrollbar-thumb {
         }
         .logo__small {
             display: block;
+        }
+        .sidebar__item:hover .sidebar__tooltip {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
         }
     }
 
@@ -598,6 +605,16 @@ body::-webkit-scrollbar-thumb {
         border-radius: 50%;
         background-color: $white;
         transition: all 0.3s ease;
+        &:hover .sidebar__tooltip {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
+    }
+
+    &__tooltip {
+        top: -2px;
+        left: 42px;
     }
 
     &__list {
@@ -635,6 +652,10 @@ body::-webkit-scrollbar-thumb {
             .sidebar__item-icon {
                 fill: $white;
             }
+        }
+        .sidebar__tooltip {
+            top: 6px;
+            left: 57px;
         }
     }
 
