@@ -97,14 +97,14 @@
             <header class="header">
                 <div class="payments-header">
                     <div class="payments-buttons">
-                        <button class="button button__tertiary icon-right">
+                        <button class="button button__tertiary icon-right bm-create-payout">
                             <span>Запросить выплату</span>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="#3252FC" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M10.75 5C10.75 4.58579 10.4142 4.25 10 4.25C9.58579 4.25 9.25 4.58579 9.25 5V9.25H5C4.58579 9.25 4.25 9.58579 4.25 10C4.25 10.4142 4.58579 10.75 5 10.75H9.25V15C9.25 15.4142 9.58579 15.75 10 15.75C10.4142 15.75 10.75 15.4142 10.75 15V10.75H15C15.4142 10.75 15.75 10.4142 15.75 10C15.75 9.58579 15.4142 9.25 15 9.25H10.75V5Z" />
                             </svg>
                         </button>
-                        <button class="button button__tertiary icon-right">
+                        <button class="button button__tertiary icon-right bm-payouts-export">
                             <span>Экспорт</span>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="#3252FC" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -181,7 +181,7 @@
                                 <span class="payouts__time">14:20</span>
                             </div>
                             <div class="table__item payouts__table-item">
-                                <button class="table__item-button">
+                                <button class="table__item-button bm-payouts-info">
                                     <svg class="table__item-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -240,6 +240,151 @@
                 <a class="footer__text" href="#">Документация API</a>
                 <span class="footer__text">© 2023 RubPay, Inc</span>
             </footer>
+        </div>
+        <div class="modal payouts-export">
+            <div class="modal__wrapper payouts-export__wrapper">
+                <button class="modal__close">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.53033 4.46967C5.23744 4.17678 4.76256 4.17678 4.46967 4.46967C4.17678 4.76256 4.17678 5.23744 4.46967 5.53033L8.93934 10L4.46967 14.4697C4.17678 14.7626 4.17678 15.2374 4.46967 15.5303C4.76256 15.8232 5.23744 15.8232 5.53033 15.5303L10 11.0607L14.4697 15.5303C14.7626 15.8232 15.2374 15.8232 15.5303 15.5303C15.8232 15.2374 15.8232 14.7626 15.5303 14.4697L11.0607 10L15.5303 5.53033C15.8232 5.23744 15.8232 4.76256 15.5303 4.46967C15.2374 4.17678 14.7626 4.17678 14.4697 4.46967L10 8.93934L5.53033 4.46967Z"
+                            fill="white" />
+                    </svg>
+                </button>
+                <form class="payouts-export__content">
+                    <h4 class="modal__title">Экспорт данных</h4>
+                    <div class="labels">
+                        <div class="select">
+                            <div class="input">
+                                <p class="input__placeholder">Касса</p>
+                                <input readonly class="input__field" type="text">
+                                <p class="input__description"></p>
+                            </div>
+                            <div class="select__wrapper">
+                                <ul class="select__list">
+                                    <li class="select__item">Все</li>
+                                    <li class="select__item">4</li>
+                                </ul>
+                            </div>
+                            <svg class="select__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M6.75435 9.07014C7.09349 8.731 7.64335 8.731 7.98249 9.07014L12 13.0877L16.0175 9.07014C16.3567 8.731 16.9065 8.731 17.2456 9.07014C17.5848 9.40928 17.5848 9.95913 17.2456 10.2983L12.6141 14.9298C12.2749 15.269 11.7251 15.269 11.3859 14.9298L6.75435 10.2983C6.41521 9.95913 6.41521 9.40928 6.75435 9.07014Z"
+                                    fill="#8A8E98" fill-opacity="0.6" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="export__buttons">
+                        <button class="button button__secondary">Отмена</button>
+                        <button class="button button__primary" disabled>Выгрузить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal create-payout">
+            <div class="modal__wrapper create-payout__wrapper">
+                <button class="modal__close">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.53033 4.46967C5.23744 4.17678 4.76256 4.17678 4.46967 4.46967C4.17678 4.76256 4.17678 5.23744 4.46967 5.53033L8.93934 10L4.46967 14.4697C4.17678 14.7626 4.17678 15.2374 4.46967 15.5303C4.76256 15.8232 5.23744 15.8232 5.53033 15.5303L10 11.0607L14.4697 15.5303C14.7626 15.8232 15.2374 15.8232 15.5303 15.5303C15.8232 15.2374 15.8232 14.7626 15.5303 14.4697L11.0607 10L15.5303 5.53033C15.8232 5.23744 15.8232 4.76256 15.5303 4.46967C15.2374 4.17678 14.7626 4.17678 14.4697 4.46967L10 8.93934L5.53033 4.46967Z"
+                            fill="white" />
+                    </svg>
+                </button>
+                <form class="create-payout__content">
+                    <h4 class="modal__title">Новая выплата</h4>
+                    <div class="labels">
+                        <div class="select">
+                            <div class="input">
+                                <p class="input__placeholder">Касса</p>
+                                <input readonly class="input__field" type="text">
+                                <p class="input__description"></p>
+                            </div>
+                            <div class="select__wrapper">
+                                <ul class="select__list">
+                                    <li class="select__item">Все</li>
+                                    <li class="select__item">4</li>
+                                </ul>
+                            </div>
+                            <svg class="select__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M6.75435 9.07014C7.09349 8.731 7.64335 8.731 7.98249 9.07014L12 13.0877L16.0175 9.07014C16.3567 8.731 16.9065 8.731 17.2456 9.07014C17.5848 9.40928 17.5848 9.95913 17.2456 10.2983L12.6141 14.9298C12.2749 15.269 11.7251 15.269 11.3859 14.9298L6.75435 10.2983C6.41521 9.95913 6.41521 9.40928 6.75435 9.07014Z"
+                                    fill="#8A8E98" fill-opacity="0.6" />
+                            </svg>
+                        </div>
+                        <div class="input">
+                            <p class="input__placeholder">Валюта</p>
+                            <input class="input__field" type="text">
+                            <p class="input__description"></p>
+                        </div>
+                        <div class="input">
+                            <p class="input__placeholder">Платежная система</p>
+                            <input class="input__field" type="text">
+                            <p class="input__description"></p>
+                        </div>
+                        <div class="input">
+                            <p class="input__placeholder">Сумма</p>
+                            <input class="input__field" type="text">
+                            <p class="input__description"></p>
+                        </div>
+                        <div class="input">
+                            <p class="input__placeholder">Номер заказа</p>
+                            <input class="input__field" type="text">
+                            <p class="input__description"></p>
+                        </div>
+                        <div class="input">
+                            <p class="input__placeholder">Реквизиты получателя</p>
+                            <input class="input__field" type="text">
+                            <p class="input__description"></p>
+                        </div>
+                    </div>
+                    <div class="create-payout__buttons">
+                        <button class="button button__secondary">Отмена</button>
+                        <button class="button button__primary" disabled>Создать</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal payouts-info">
+            <div class="modal__wrapper payouts-info">
+                <button class="modal__close">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.53033 4.46967C5.23744 4.17678 4.76256 4.17678 4.46967 4.46967C4.17678 4.76256 4.17678 5.23744 4.46967 5.53033L8.93934 10L4.46967 14.4697C4.17678 14.7626 4.17678 15.2374 4.46967 15.5303C4.76256 15.8232 5.23744 15.8232 5.53033 15.5303L10 11.0607L14.4697 15.5303C14.7626 15.8232 15.2374 15.8232 15.5303 15.5303C15.8232 15.2374 15.8232 14.7626 15.5303 14.4697L11.0607 10L15.5303 5.53033C15.8232 5.23744 15.8232 4.76256 15.5303 4.46967C15.2374 4.17678 14.7626 4.17678 14.4697 4.46967L10 8.93934L5.53033 4.46967Z"
+                            fill="white" />
+                    </svg>
+                </button>
+                <form class="payouts-info__content">
+                    <h4 class="modal__title">Информация о платеже №101639213</h4>
+                    <div class="payouts-info__table">
+                        <div class="payouts-info__item">
+                            <span class="payouts-info__title">Номера заказа</span>
+                            <span class="payouts-info__value">52358</span>
+                        </div>
+                        <div class="payouts-info__item">
+                            <span class="payouts-info__title">Кошелек</span>
+                            <span class="payouts-info__value">5336 6902 6861 0211</span>
+                        </div>
+                        <div class="payouts-info__item">
+                            <span class="payouts-info__title">Дата создания</span>
+                            <span class="payouts-info__value">
+                                <span>04.06.23</span>
+                                <span class="payouts-info__time">14:20</span>
+                            </span>
+                        </div>
+                        <div class="payouts-info__item">
+                            <span class="payouts-info__title">Дата выплаты</span>
+                            <span class="payouts-info__value">
+                                <span>04.06.23</span>
+                                <span class="payouts-info__time">14:20</span>
+                            </span>
+                        </div>
+                        <div class="payouts-info__item">
+                            <span class="payouts-info__title">Сумма зачисления</span>
+                            <span class="payouts-info__value">279₽</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <script type="module" src="../js/script.js"></script>

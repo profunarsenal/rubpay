@@ -18,21 +18,29 @@ const inputs = () => {
     }
 
     if (selects.length) {
+        const selectInputs = document.querySelectorAll(".select .input__field");
+
+        selectInputs.forEach(input => {
+            input.addEventListener("click", (e) => {
+                const select = e.target.closest(".select");
+
+                selects.forEach(item => {
+                    if (item !== select) {
+                        item.classList.remove("open");
+                    }
+                });
+    
+                select.classList.toggle("open");
+
+                if (input.parentNode.classList.contains("focused") && !select.classList.contains("open")) {
+                    input.blur();
+                }
+            });
+        });
+
         selects.forEach(select => {
             const selectInput = select.querySelector(".input__field");
             const selectItems = select.querySelectorAll(".select__item");
-
-            selectInput.addEventListener("click", () => {
-                selects.forEach(item => {
-                    item.classList.remove("open");
-                });
-
-                select.classList.toggle("open");
-
-                if (selectInput.parentNode.classList.contains("focused") && !select.classList.contains("open")) {
-                    selectInput.blur();
-                }
-            });
 
             selectItems.forEach(item => {
                 item.addEventListener("click", (e) => {

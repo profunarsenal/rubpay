@@ -6,16 +6,14 @@ const modals = () => {
         "export",
         "payments-info",
         "edit-checkout",
+        "payouts-export",
+        "create-payout",
+        "payouts-info",
     ];
 
     const openModal = (modal) => {
-        const modalWrap = modal.querySelector('.modal__wrapper');
         modal.classList.add("open");
         document.body.classList.add("open");
-
-        if (modalWrap.clientHeight >= document.body.clientHeight) {
-            modal.classList.add("top");
-        }
     };
 
     const closeModal = (modal) => {
