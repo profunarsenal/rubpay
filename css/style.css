@@ -991,7 +991,7 @@ body.open {
   flex: 1 1 50%;
 }
 
-.payments-info__content {
+.payments-info__wrapper {
   width: 466px;
 }
 .payments-info__table {
@@ -1105,7 +1105,7 @@ body.open {
   flex: 1 1 50%;
 }
 
-.payouts-info__content {
+.payouts-info__wrapper {
   width: 466px;
 }
 .payouts-info__table {
