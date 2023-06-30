@@ -25,10 +25,12 @@ const modals = () => {
     if (modals.length) {
         modals.forEach(modal => {
             const window = document.querySelector(`.${modal}`);
-            const button = document.querySelector(`.bm-${modal}`);
+            const buttons = document.querySelectorAll(`.bm-${modal}`);
 
-            if (window && button) {
-                button.addEventListener("click", () => openModal(window));
+            if (window && buttons.length) {
+                buttons.forEach(button => {
+                    button.addEventListener("click", () => openModal(window));
+                })
                 window.addEventListener("click", (e) => {
                     if (e.target.contains(window) || e.target.closest(".modal__close")) {
                         closeModal(window);
