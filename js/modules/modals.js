@@ -20,6 +20,9 @@ const modals = () => {
         modal.classList.remove("open");
         document.body.classList.remove("open");
         modal.classList.remove("top");
+        setTimeout(() => {
+            modal.scrollTop = 0;
+        }, 300);
     };
 
     if (modals.length) {
