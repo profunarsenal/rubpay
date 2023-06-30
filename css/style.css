@@ -309,6 +309,7 @@ body.open {
   line-height: 20px;
   border-radius: 100px;
   transition: all 0.3s ease;
+  max-height: 44px;
 }
 .button svg {
   min-width: 20px;
@@ -611,8 +612,16 @@ body.open {
   height: 100%;
   padding: 32px 12px 12px 12px;
   background-color: #FFFFFF;
-  border-right: 1px solid #E5E6E8;
   transition: all 0.3s ease;
+}
+.sidebar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #E5E6E8;
 }
 .sidebar.collapse {
   width: 72px;
@@ -746,6 +755,7 @@ body.open {
   font-size: 14px;
   line-height: 20px;
   font-weight: 450;
+  color: #161819;
 }
 
 .logo {

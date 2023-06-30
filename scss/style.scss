@@ -258,6 +258,7 @@ body {
     line-height: 20px;
     border-radius: 100px;
     transition: all 0.3s ease;
+    max-height: 44px;
     svg {
         min-width: 20px;
         max-width: 20px;
@@ -594,8 +595,16 @@ body {
     height: 100%;
     padding: 32px 12px 12px 12px;
     background-color: $white;
-    border-right: 1px solid $gray-light;
     transition: all 0.3s ease;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 1px;
+        background-color: $gray-light;
+    }
     &.collapse {
         width: 72px;
         .sidebar__item-text,
@@ -741,6 +750,7 @@ body {
         font-size: 14px;
         line-height: 20px;
         font-weight: 450;
+        color: $black;
     }
 }
 
