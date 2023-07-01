@@ -61,6 +61,16 @@ body {
         margin-left: 0;
     }
 }
+
+.content-wrapper {
+    position: relative;
+}
+
+@media(max-width: 767px) {
+  .content-wrapper {
+    overflow-y: auto;
+  }
+}
 // COMMON
 .modal {
     position: fixed;
@@ -189,6 +199,9 @@ body {
 
 .select {
     position: relative;
+    // &.open {
+    //     margin-bottom: 50px;
+    // }
 
     &__wrapper {
         position: relative; 
@@ -200,6 +213,7 @@ body {
         top: -7px;
         left: 0;
         width: 100%;
+        height: 100px;
         padding: 6px;
         border-radius: 12px;
         background-color: $white;
@@ -208,6 +222,7 @@ body {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
+        overflow-y: auto;
     }
 
     &__item {
@@ -242,16 +257,25 @@ body {
         pointer-events: none;
     }
 
-    &.open .select__list {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-        top: 7px;
+    &.open {
+        .select__list {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+            top: 7px;
+        }
+        .select__icon {
+            transform: rotate(180deg);
+        }
     }
+}
 
-    &.open .select__icon {
-        transform: rotate(180deg);
+@media(max-width: 576px) {
+  .select {
+    &.open .select__wrapper {
+        margin-bottom: 50px;
     }
+  }
 }
 
 .select .input__field {
@@ -284,6 +308,7 @@ body {
     border-radius: 100px;
     transition: all 0.3s ease;
     max-height: 44px;
+    white-space: nowrap;
     svg {
         min-width: 20px;
         max-width: 20px;
@@ -382,6 +407,8 @@ body {
     }
 
     &__input {
+        max-width: 248px;
+        max-height: 44px;
         font-weight: 400;
         font-size: 14px;
         line-height: 20px;
@@ -399,6 +426,22 @@ body {
         &:focus {
             background-color: rgba($gray-light, 0.15);
             border: 1px solid $blue;
+        }
+    }
+}
+
+@media(max-width: 860px) {
+  .search {
+    &__input {
+        max-width: 230px;
+    }
+  }
+}
+
+@media(max-width: 767px) {
+    .search {
+        &__input {
+            max-width: 100%;
         }
     }
 }
@@ -471,6 +514,16 @@ body {
     }
 }
 
+@media(max-width: 576px) {
+    .pagination {
+        justify-content: center;
+
+        &__info {
+            display: none;
+        }
+    }
+}
+
 .filter {
     &__wrapper {
         position: relative;
@@ -478,6 +531,7 @@ body {
 
     &__block {
         position: absolute;
+        z-index: 10;
         top: 8px;
         right: 0;
         width: 716px;
@@ -509,6 +563,38 @@ body {
         gap: 12px;
         > .button {
             flex: 0 1 50%;
+        }
+    }
+}
+
+@media(max-width: 1060px) {
+  .filter {
+    &__wrapper {
+        position: static;
+    }
+
+    &__block {
+        width: calc(100% - 200px);
+        top: 80px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+  }
+}
+
+@media(max-width: 767px) {
+    .filter {
+        &__block {
+            top: 184px;
+            width: 96%;
+        }
+    }
+}
+
+@media(max-width: 576px) {
+    .filter {
+        &__fields {
+            grid-template-columns: 1fr;
         }
     }
 }
@@ -626,6 +712,12 @@ body {
 
 .header-inner {
     padding: 24px 40px 16px 40px;
+}
+
+@media(max-width: 860px) {
+    .header-inner {
+        padding: 20px 16px 16px 16px;
+    }
 }
 
 @media(max-width: 767px) {
@@ -1016,6 +1108,7 @@ body {
         display: flex;
         align-items: center;
         width: 100%;
+        max-height: 44px;
         gap: 12px;
         padding: 12px;
         background-color: $white;
@@ -1080,9 +1173,13 @@ body {
     justify-content: flex-start;
     margin-bottom: 20px;
 
+    &__main {
+        margin-left: 4px;
+    }
+
     &__small {
         display: none
-    };
+    }
 }
 // CHECKOUT
 .checkout {
@@ -1370,12 +1467,43 @@ body {
 .payments-header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .payments-buttons,
 .payments-filters {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 8px;
+}
+
+@media(max-width: 767px) {
+  .payments-buttons {
+    flex: 1 1 100%;
+    .button {
+        flex: 1 1 50%;
+        justify-content: center;
+    }
+  }
+  .payments-filters {
+      flex: 1 1 100%;
+
+      .filter,
+      .search {
+          flex: 1 1 50%;
+      }
+
+      .search__input {
+        width: 100%;
+      }
+
+      .filter .button {
+        width: 100%;
+        justify-content: center;
+      }
+  }
 }
 
 .payments {
@@ -1467,6 +1595,29 @@ body {
             height: 100vh;
         }
     }
+}
+
+@media(max-width: 767px) {
+  .payments {
+    &__table {
+        display: none;
+    }
+
+    &__status {
+        padding: 2px 12px;
+    }
+
+    &__date {
+        gap: 6px;
+    }
+
+    &__buttons {
+        margin-top: 12px;
+        .button {
+            flex: 1 1 100%;
+        }
+    }
+  }
 }
 
 .create-payment {
