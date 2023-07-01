@@ -1086,6 +1086,7 @@ body {
     &__item {
         position: relative;
         border-radius: 100px;
+        padding: 10px 12px;
         transition: all 0.3s ease;
         @media(any-hover:hover) {
         &:hover {
