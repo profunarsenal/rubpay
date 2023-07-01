@@ -106,8 +106,8 @@ body {
 
     &__close {
         position: absolute;
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
         top: -18px;
         right: -14px;
         background-color: transparent;
@@ -199,9 +199,6 @@ body {
 
 .select {
     position: relative;
-    // &.open {
-    //     margin-bottom: 50px;
-    // }
 
     &__wrapper {
         position: relative; 
@@ -213,11 +210,12 @@ body {
         top: -7px;
         left: 0;
         width: 100%;
-        height: 100px;
+        height: 104px;
         padding: 6px;
         border-radius: 12px;
         background-color: $white;
         box-shadow: 0px 6px 34px 0px rgba($black, 0.12);
+        border: 1px solid $gray-light;
         transition: all 0.4s ease;
         opacity: 0;
         visibility: hidden;
@@ -236,8 +234,11 @@ body {
         transition: all 0.4s ease;
         @media(any-hover:hover) {
         &:hover {
-            background-color: rgba($gray-light, 0.20);
+            background-color: rgba($gray-light, 0.40);
           }
+        }
+        &:not(:last-child) {
+            margin-bottom: 4px;
         }
         &.selected {
             background-color: rgba($gray-light, 0.40);
@@ -400,11 +401,29 @@ body {
 
 .search {
     position: relative;
+    &.enter {
+        .search__clear {
+            opacity: 1;
+            transform: scale(1) rotate(180deg);
+        }
+    }
 
     &__icon {
         position: absolute;
         top: 12px;
-        left: 16px;
+        left: 12px;
+    }
+
+    &__clear {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 20px;
+        height: 20px;
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.3s ease;
+        background-color: transparent;
     }
 
     &__input {
@@ -413,9 +432,9 @@ body {
         font-weight: 400;
         font-size: 14px;
         line-height: 20px;
-        padding: 12px 16px 12px 48px;
+        padding: 12px 16px 12px 44px;
         border-radius: 100px;
-        background-color: rgba($gray-light, 0.04);
+        background-color: rgba($gray-light, 0.15);
         border: 1px solid $gray-light;
         transition: all 0.3s ease;
         @media(any-hover:hover) {
@@ -427,6 +446,9 @@ body {
         &:focus {
             background-color: rgba($gray-light, 0.15);
             border: 1px solid $blue;
+        }
+        &::placeholder {
+            color: rgba($gray-dark, 0.60);
         }
     }
 }
@@ -448,12 +470,21 @@ body {
 }
 
 .pagination {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 40px;
+    padding: 12px 32px 12px 40px;
     margin-top: auto;
-    border-bottom: 1px solid $gray-light;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $gray-light;
+    }
 
     &__info {
         display: flex;
@@ -729,7 +760,16 @@ body {
 // FOOTER
 .footer {
     margin-top: auto;
-    border-top: 1px solid $gray-light;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $gray-light;
+    }
 
     &__content {
         padding: 12px 40px;
@@ -960,7 +1000,7 @@ body {
     flex-direction: column;
     width: 224px;
     height: 100%;
-    padding: 32px 12px 12px 12px;
+    padding: 32px 14px 12px 14px;
     background-color: $white;
     transition: all 0.3s ease;
     &::before {
@@ -989,11 +1029,17 @@ body {
         .logo__small {
             display: block;
         }
-        .sidebar__item:hover .sidebar__tooltip,
-        .sidebar__button:hover .sidebar__tooltip {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: all;
+        .sidebar__item,
+        .sidebar__button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            &:hover .sidebar__tooltip {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+            }
         }
     }
 
@@ -1034,11 +1080,11 @@ body {
         display: flex;
         flex-direction: column;
         gap: 4px;
+        margin-bottom: 4px;
     }
 
     &__item {
         position: relative;
-        padding: 10px 12px;
         border-radius: 100px;
         transition: all 0.3s ease;
         @media(any-hover:hover) {
@@ -1842,8 +1888,6 @@ body {
 }
 // SETTINGS
 .settings {
-    margin-bottom: 98px;
-
     &__info {
         max-width: 360px;
         padding: 30px 40px;
@@ -1857,7 +1901,7 @@ body {
         font-weight: 500;
         font-size: 24px;
         line-height: 32px;
-        margin-bottom: 22px;
+        margin-bottom: 20px;
     }
 
     &__sessions {
@@ -1865,17 +1909,17 @@ body {
     }
 
     &__sessions-header {
-        display: flex;
-        align-items: center;
-        gap: 24px;
         margin-bottom: 24px;
         padding-left: 40px;
         & > .settings__title {
+            display: inline-block;
             margin-bottom: 0;
+            margin-right: 24px;
         }
     }
 
     &__sessions-close {
+        display: inline-block;
         font-weight: 450;
         font-size: 12px;
         line-height: 16px;
@@ -1918,6 +1962,13 @@ body {
     }
 }
 
+@media(min-width: 767px) {
+  .settings {
+    height: calc(100vh - 44px);
+    overflow-y: auto;
+  }
+}
+
 @media(max-width: 767px) {
     .settings {
         padding-top: 50px;
@@ -1936,9 +1987,13 @@ body {
 
         &__sessions-header {
             gap: 8px;
+            display: flex;
             align-items: flex-start;
             flex-direction: column;
             padding-left: 16px;
+            & > .settings__title {
+                margin-right: 0;
+            }
         }
 
         &__sessions-item {

@@ -23,6 +23,7 @@ const inputs = () => {
         selectInputs.forEach(input => {
             input.addEventListener("click", (e) => {
                 const select = e.target.closest(".select");
+                const selectList = select.querySelector(".select__list");
 
                 selects.forEach(item => {
                     if (item !== select) {
@@ -31,6 +32,12 @@ const inputs = () => {
                 });
     
                 select.classList.toggle("open");
+
+                if (!select.classList.contains("open")) {
+                    setTimeout(() => {
+                        selectList.scrollTop = 0;
+                    }, 300);
+                }
 
                 if (input.parentNode.classList.contains("focused") && !select.classList.contains("open")) {
                     input.blur();
@@ -41,6 +48,7 @@ const inputs = () => {
         selects.forEach(select => {
             const selectInput = select.querySelector(".input__field");
             const selectItems = select.querySelectorAll(".select__item");
+            const selectList = select.querySelector(".select__list");
 
             selectItems.forEach(item => {
                 item.addEventListener("click", (e) => {
@@ -56,6 +64,9 @@ const inputs = () => {
                         selectInput.value = item.textContent;
                         selectInput.parentNode.classList.add("focused");
                         select.classList.remove("open");
+                        setTimeout(() => {
+                            selectList.scrollTop = 0;
+                        }, 300);
                     }
                 });
             });
