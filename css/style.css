@@ -407,6 +407,11 @@ body.open {
   color: rgba(138, 142, 152, 0.5);
 }
 
+@media (max-width: 767px) {
+  .button {
+    padding: 10px 16px;
+  }
+}
 .search {
   position: relative;
 }
@@ -641,6 +646,11 @@ body.open {
   padding: 24px 40px 16px 40px;
 }
 
+@media (max-width: 767px) {
+  .header-inner {
+    padding: 80px 16px 16px 16px;
+  }
+}
 .footer {
   margin-top: auto;
   border-top: 1px solid #E5E6E8;
@@ -732,6 +742,49 @@ body.open {
   left: 30px;
 }
 
+.table-adaptive {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .table-adaptive {
+    display: block;
+  }
+  .table-adaptive__list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #E5E6E8;
+  }
+  .table-adaptive__item {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0 16px 0;
+    border-bottom: 1px solid #E5E6E8;
+  }
+  .table-adaptive__row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  .table-adaptive__title {
+    flex: 1 0 45%;
+    padding: 6px 0;
+    font-size: 14px;
+    font-weight: 450;
+    line-height: 20px;
+    color: #8A8E98;
+  }
+  .table-adaptive__value {
+    flex: 1 0 45%;
+    display: flex;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 20px;
+    word-break: break-all;
+  }
+}
 .navigation {
   display: none;
 }
@@ -1079,6 +1132,11 @@ body.open {
     height: 100vh;
   }
 }
+@media (max-width: 767px) {
+  .checkout__table {
+    display: none;
+  }
+}
 .new-checkout__wrapper {
   width: 368px;
 }
@@ -1148,6 +1206,22 @@ body.open {
 .checkout-info * .table__row-header,
 .checkout-info .table__row {
   padding: 0 12px;
+}
+
+.checkout-adaptive__balance {
+  display: flex;
+  flex-direction: column;
+  word-break: normal;
+}
+.checkout-adaptive__buttons {
+  display: flex;
+  gap: 8px;
+  word-break: normal;
+  margin-top: 12px;
+  padding: 0 20px;
+}
+.checkout-adaptive__buttons > .button {
+  flex: 1 1 50%;
 }
 
 .payments-header {
@@ -1476,7 +1550,6 @@ body.open {
     padding-top: 50px;
   }
   .settings__info {
-    max-width: 100%;
     padding: 30px 16px;
   }
   .settings__button {
@@ -1501,5 +1574,19 @@ body.open {
   }
   .settings__sessions-current {
     padding-left: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .settings__info {
+    max-width: 100%;
+  }
+  .settings__button {
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .bm-new-checkout {
+    width: 100%;
+    justify-content: center;
   }
 }

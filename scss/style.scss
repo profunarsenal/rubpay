@@ -358,6 +358,12 @@ body {
     }
 }
 
+@media(max-width: 767px) {
+  .button {
+    padding: 10px 16px;
+  }
+}
+
 .search {
     position: relative;
 
@@ -613,6 +619,12 @@ body {
 .header-inner {
     padding: 24px 40px 16px 40px;
 }
+
+@media(max-width: 767px) {
+    .header-inner {
+        padding: 80px 16px 16px 16px;
+    }
+}
 // FOOTER
 .footer {
     margin-top: auto;
@@ -717,6 +729,55 @@ body {
     &__item-tooltip {
         top: -7px;
         left: 30px;
+    }
+}
+
+.table-adaptive {
+    display: none;
+}
+
+@media(max-width: 767px) {
+    .table-adaptive {
+        display: block;
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid $gray-light;
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            padding: 8px 0 16px 0;
+            border-bottom: 1px solid $gray-light;
+        }
+
+        &__row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        &__title {
+            flex: 1 0 45%;
+            padding: 6px 0;
+            font-size: 14px;
+            font-weight: 450;
+            line-height: 20px;
+            color: $gray-dark;
+        }
+
+        &__value {
+            flex: 1 0 45%;
+            display: flex;
+            padding: 6px 0;
+            font-size: 12px;
+            line-height: 20px;
+            word-break: break-all
+        }
     }
 }
 // NAVIGATION
@@ -1114,6 +1175,14 @@ body {
     }
 }
 
+@media(max-width: 767px) {
+  .checkout {
+    &__table {
+        display: none;
+    }
+  }
+}
+
 .new-checkout {
     &__wrapper {
         width: 368px;
@@ -1200,6 +1269,25 @@ body {
     * .table__row-header,
     .table__row {
         padding: 0 12px;
+    }
+}
+
+.checkout-adaptive {
+    &__balance {
+        display: flex;
+        flex-direction: column;
+        word-break: normal;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 8px;
+        word-break: normal;
+        margin-top: 12px;
+        padding: 0 20px;
+        > .button {
+            flex: 1 1 50%;
+        }
     }
 }
 // PAYMENTS
@@ -1607,7 +1695,6 @@ body {
         padding-top: 50px;
 
         &__info {
-            max-width: 100%;
             padding: 30px 16px;
         }
 
@@ -1640,4 +1727,24 @@ body {
             padding-left: 20px;
         }
     }
+}
+
+@media(max-width: 576px) {
+    .settings {
+        &__info {
+            max-width: 100%;
+        }
+
+        &__button {
+            width: 100%;
+        }
+    }
+}
+
+// BUTTONS ADAPTIVE
+@media(max-width: 576px) {
+  .bm-new-checkout {
+    width: 100%;
+    justify-content: center;
+  }
 }
