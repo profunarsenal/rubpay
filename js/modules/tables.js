@@ -18,6 +18,7 @@ const tables = () => {
         const buttonHideApi = e.target.closest(".b-hide-api");
 
         if (buttonShowApi) {
+            console.log(buttonShowApi)
             const apiValue = tableItem.querySelector(".checkout__api-value");
 
             apiValue.classList.remove("hide");

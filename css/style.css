@@ -178,6 +178,11 @@ body.open {
   text-align: center;
 }
 
+@media (max-width: 767px) {
+  .modal__close {
+    right: -6px;
+  }
+}
 .input {
   position: relative;
 }
@@ -782,7 +787,6 @@ body.open {
     padding: 6px 0;
     font-size: 12px;
     line-height: 20px;
-    word-break: break-all;
   }
 }
 .navigation {
@@ -1148,17 +1152,26 @@ body.open {
   flex: 0 1 50%;
 }
 
+@media (max-width: 767px) {
+  .new-checkout__wrapper {
+    width: 90%;
+  }
+}
 .edit-checkout__wrapper {
   width: 368px;
 }
 
+@media (max-width: 767px) {
+  .edit-checkout__wrapper {
+    width: 90%;
+  }
+}
 .checkout-info__wrapper {
   width: 688px;
 }
 .checkout-info__tabs {
   position: relative;
   width: 100%;
-  padding: 12px 16px;
   margin-bottom: 16px;
   border-radius: 12px;
   display: flex;
@@ -1178,19 +1191,23 @@ body.open {
   transition: all 0.3s ease;
 }
 .checkout-info__tabs.toggle::after {
-  left: 330px;
+  left: 49.7%;
 }
 .checkout-info__tab {
   position: relative;
   z-index: 1;
   flex: 0 0 50%;
   font-weight: 450;
+  padding: 12px 16px;
   font-size: 14px;
   line-height: 20px;
   color: #8A8E98;
   background-color: transparent;
 }
-.checkout-info__table {
+.checkout-info__tab-adaptive {
+  display: none;
+}
+.checkout-info__table-content {
   height: 360px;
   overflow-y: auto;
 }
@@ -1208,6 +1225,41 @@ body.open {
   padding: 0 12px;
 }
 
+@media (max-width: 767px) {
+  .checkout-info__wrapper {
+    width: 90%;
+  }
+  .checkout-info__tab-adaptive {
+    display: block;
+  }
+  .checkout-info__table, .checkout-info__tab-value {
+    display: none;
+  }
+  .checkout-info__title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #161819;
+  }
+  .checkout-info__payment {
+    flex-direction: column;
+  }
+  .checkout-info__method {
+    color: #8A8E98;
+  }
+  .checkout-info__adaptive .table-adaptive__row {
+    padding: 0 12px;
+  }
+  .checkout-info__adaptive .table-adaptive__item {
+    padding: 16px 0;
+  }
+  .checkout-info__adaptive .table-adaptive__value {
+    word-break: normal;
+  }
+}
+.checkout-adaptive__url {
+  word-break: break-all;
+}
 .checkout-adaptive__balance {
   display: flex;
   flex-direction: column;

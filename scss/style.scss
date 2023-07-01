@@ -112,6 +112,14 @@ body {
     }
 }
 
+@media(max-width: 767px) {
+  .modal {
+    &__close {
+        right: -6px;
+    }
+  }
+}
+
 .input {
     position: relative;
     &.focused {
@@ -776,7 +784,6 @@ body {
             padding: 6px 0;
             font-size: 12px;
             line-height: 20px;
-            word-break: break-all
         }
     }
 }
@@ -1197,9 +1204,25 @@ body {
     }
 }
 
+@media(max-width: 767px) {
+    .new-checkout {
+        &__wrapper {
+            width: 90%;
+        }
+    }
+}
+
 .edit-checkout {
     &__wrapper {
         width: 368px;
+    }
+}
+
+@media(max-width: 767px) {
+    .edit-checkout {
+        &__wrapper {
+            width: 90%;
+        }
     }
 }
 
@@ -1211,7 +1234,6 @@ body {
     &__tabs {
         position: relative;
         width: 100%;
-        padding: 12px 16px;
         margin-bottom: 16px;
         border-radius: 12px;
         display: flex;
@@ -1231,7 +1253,7 @@ body {
         }
         &.toggle {
             &::after {
-                left: 330px;
+                left: 49.7%;
             }
         }
     }
@@ -1241,13 +1263,18 @@ body {
         z-index: 1;
         flex: 0 0 50%;
         font-weight: 450;
+        padding: 12px 16px;
         font-size: 14px;
         line-height: 20px;
         color: $gray-dark;
         background-color: transparent;
     }
 
-    &__table {
+    &__tab-adaptive {
+        display: none;
+    }
+
+    &__table-content {
         height: 360px;
         overflow-y: auto;
     }
@@ -1272,7 +1299,55 @@ body {
     }
 }
 
+@media(max-width: 767px) {
+    .checkout-info {
+        &__wrapper {
+            width: 90%;
+        }
+
+        &__tab-adaptive {
+            display: block;
+        }
+
+        &__table,
+        &__tab-value {
+            display: none;
+        }
+
+        &__title {
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 20px;
+            color: $black;
+        }
+
+        &__payment {
+            flex-direction: column;
+        }
+
+        &__method {
+            color: $gray-dark;
+        }
+
+        &__adaptive {
+            .table-adaptive__row {
+                padding: 0 12px;
+            }
+            .table-adaptive__item {
+                padding: 16px 0;
+            }
+            .table-adaptive__value {
+                word-break: normal;
+            }
+        }
+    }
+}
+
 .checkout-adaptive {
+    &__url {
+        word-break: break-all
+    }
+
     &__balance {
         display: flex;
         flex-direction: column;
@@ -1290,6 +1365,7 @@ body {
         }
     }
 }
+
 // PAYMENTS
 .payments-header {
     display: flex;
