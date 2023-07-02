@@ -255,6 +255,12 @@ body.open {
   font-size: 12px;
   line-height: 12px;
 }
+.input__icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  pointer-events: none;
+}
 
 .select {
   position: relative;
@@ -467,7 +473,7 @@ body.open {
   background-color: transparent;
 }
 .search__input {
-  max-width: 248px;
+  width: 248px;
   max-height: 44px;
   font-weight: 400;
   font-size: 14px;
@@ -497,7 +503,7 @@ body.open {
 
 @media (max-width: 992px) {
   .search__input {
-    max-width: 230px;
+    width: 253px;
   }
 }
 @media (max-width: 767px) {
@@ -622,7 +628,7 @@ body.open {
   flex: 0 1 50%;
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 1080px) {
   .filter__wrapper {
     position: static;
   }
@@ -634,7 +640,7 @@ body.open {
 }
 @media (max-width: 833px) {
   .filter__block {
-    width: calc(80vh - 100px);
+    width: 90%;
     top: 130px;
     right: 50%;
     transform: translateX(50%);
@@ -833,13 +839,22 @@ body.open {
   width: calc(100% + 17px);
 }
 .table__row-header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
   padding: 0 40px;
   background-color: rgba(229, 230, 232, 0.15);
-  border-top: 1px solid #E5E6E8;
+}
+.table__row-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #E5E6E8;
 }
 .table__item-header {
   padding: 12px 0;
@@ -847,6 +862,7 @@ body.open {
   font-size: 14px;
   font-weight: 450;
   line-height: 20px;
+  white-space: nowrap;
 }
 .table__row {
   display: flex;
@@ -1020,7 +1036,7 @@ body.open {
   flex-direction: column;
   width: 224px;
   height: 100%;
-  padding: 32px 14px 12px 14px;
+  padding: 32px 12px 12px;
   background-color: #FFFFFF;
   transition: all 0.3s ease;
 }
@@ -1066,10 +1082,10 @@ body.open {
 }
 .sidebar__collapse-button {
   position: absolute;
-  width: 32px;
-  height: 32px;
-  top: 30px;
-  right: -15px;
+  width: 24px;
+  height: 24px;
+  top: 34px;
+  right: -12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1089,8 +1105,8 @@ body.open {
   border: 1px solid #E5E6E8;
 }
 .sidebar__tooltip {
-  top: -2px;
-  left: 42px;
+  top: -6px;
+  left: 32px;
 }
 .sidebar__list {
   display: flex;
@@ -1224,7 +1240,7 @@ body.open {
   margin-bottom: 20px;
 }
 .logo__main {
-  margin-left: 4px;
+  margin-left: 12px;
 }
 .logo__small {
   display: none;
@@ -1544,18 +1560,37 @@ body.open {
   height: calc(100vh - 237px);
   overflow-y: auto;
 }
-.payments__table-row {
-  border-top: none;
-  border-bottom: 1px solid #E5E6E8;
+.payments__table-header .payments__table-item {
+  padding: 12px 0;
 }
-.payments__table-row:first-child {
-  border-top: 1px solid #E5E6E8;
+.payments__table-row {
+  position: relative;
+  align-items: center;
+  border-top: none;
+}
+.payments__table-row::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #E5E6E8;
+}
+.payments__table-row:first-child::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #E5E6E8;
 }
 .payments__table-info {
   text-align: center;
 }
 .payments__table-item {
-  padding: 10px 0;
+  padding: 4px 0;
 }
 .payments__table-item:nth-child(1) {
   flex: 0 1 8.06%;
@@ -2081,4 +2116,7 @@ body.open {
     width: 200px;
     height: 200px;
   }
+}
+.air-datepicker {
+  z-index: 999;
 }

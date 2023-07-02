@@ -4,6 +4,10 @@ const filters = () => {
 
     if (filterBlock) {
         document.body.addEventListener("click", (e) => {
+            if (e.target.closest(".air-datepicker")) {
+                return;
+            }
+
             if (e.target.closest(".filter-button")) {
                 filterBlock.classList.toggle("open");
             } else if (!e.target.closest(".filter__block")) {
