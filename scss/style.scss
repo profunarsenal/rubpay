@@ -454,6 +454,15 @@ body {
         pointer-events: none;
         transition: all 0.3s ease;
         background-color: transparent;
+        svg {
+            fill: rgba($gray-dark, 0.6);
+            transition: all 0.3s ease;
+            @media(any-hover:hover) {
+                &:hover {
+                    fill: $gray-dark
+                }
+            }
+        }
     }
 
     &__input {

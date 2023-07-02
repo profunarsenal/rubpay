@@ -489,6 +489,15 @@ body.open {
   transition: all 0.3s ease;
   background-color: transparent;
 }
+.search__clear svg {
+  fill: rgba(138, 142, 152, 0.6);
+  transition: all 0.3s ease;
+}
+@media (any-hover: hover) {
+  .search__clear svg:hover {
+    fill: #8A8E98;
+  }
+}
 .search__input {
   width: 248px;
   max-height: 44px;

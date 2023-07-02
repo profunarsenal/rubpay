@@ -44,6 +44,23 @@ const modals = () => {
             }
         });
     }
+
+    document.body.addEventListener("click", (e) => {
+        if (e.target.closest(".payments__table-row")) {
+            const modal = document.querySelector('.payments-info');
+            modal.classList.add("open");
+        }
+
+        if (e.target.closest(".payouts__table-row")) {
+            const modal = document.querySelector('.payouts-info');
+            modal.classList.add("open");
+        }
+
+        if (e.target.closest(".checkout__table-row")) {
+            const modal = document.querySelector('.checkout-info');
+            modal.classList.add("open");
+        }
+    })
 };
 
 export default modals;
