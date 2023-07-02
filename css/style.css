@@ -179,8 +179,17 @@ body.open {
   width: 24px;
   height: 24px;
   top: -18px;
-  right: -14px;
+  right: -18px;
   background-color: transparent;
+}
+.modal__close svg {
+  fill: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+@media (any-hover: hover) {
+  .modal__close:hover svg {
+    fill: #FFFFFF;
+  }
 }
 .modal__title {
   margin-bottom: 24px;
@@ -192,8 +201,11 @@ body.open {
 
 @media (max-width: 767px) {
   .modal__close {
-    top: -22px;
-    right: -6px;
+    top: -18px;
+    right: -14px;
+  }
+  .modal__close svg {
+    fill: #FFFFFF;
   }
 }
 .input {
@@ -234,6 +246,9 @@ body.open {
 }
 .input__field:disabled {
   background-color: rgba(229, 230, 232, 0.3);
+}
+.input__field:disabled:hover {
+  border: 1px solid #E5E6E8;
 }
 .input__placeholder {
   position: absolute;
@@ -454,7 +469,8 @@ body.open {
 }
 .search.enter .search__clear {
   opacity: 1;
-  transform: scale(1) rotate(180deg);
+  visibility: visible;
+  pointer-events: all;
 }
 .search__icon {
   position: absolute;
@@ -468,7 +484,8 @@ body.open {
   width: 20px;
   height: 20px;
   opacity: 0;
-  transform: scale(0);
+  visibility: hidden;
+  pointer-events: none;
   transition: all 0.3s ease;
   background-color: transparent;
 }
@@ -706,11 +723,6 @@ body.open {
   height: 64px;
   background-color: #FFFFFF;
 }
-.header__burger {
-  width: 24px;
-  height: 24px;
-  background-color: transparent;
-}
 .header__copy {
   position: fixed;
   z-index: 51;
@@ -738,7 +750,6 @@ body.open {
   .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
   }
   .header.open .navigation {
     top: 0;
@@ -760,9 +771,13 @@ body.open {
     z-index: 52;
   }
   .header__burger {
-    position: relative;
+    position: absolute;
     z-index: 52;
-    align-self: flex-start;
+    top: 24px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
   }
   .header__burger-close {
     display: none;
@@ -976,7 +991,10 @@ body.open {
     width: 100%;
     height: 100%;
     display: flex;
-    padding: 152px 16px 0 16px;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 16px;
     align-items: flex-start;
     flex-direction: column;
     background-color: #FFFFFF;
@@ -1036,7 +1054,7 @@ body.open {
   flex-direction: column;
   width: 224px;
   height: 100%;
-  padding: 32px 12px 12px;
+  padding: 32px 14px 12px;
   background-color: #FFFFFF;
   transition: all 0.3s ease;
 }
@@ -1749,7 +1767,17 @@ body.open {
   overflow-y: auto;
 }
 .payouts__table-row {
+  position: relative;
   align-items: flex-start;
+}
+.payouts__table-row::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #E5E6E8;
 }
 .payouts__table-api {
   display: inline-block;
@@ -1767,6 +1795,12 @@ body.open {
 }
 .payouts__table-info {
   text-align: center;
+}
+.payouts__table-info .bm-payouts-info {
+  vertical-align: text-top;
+}
+.payouts__table-item {
+  padding: 4px 0;
 }
 .payouts__table-item:nth-child(1) {
   flex: 0 1 8.06%;
@@ -1902,11 +1936,13 @@ body.open {
   }
 }
 .settings__info {
-  max-width: 360px;
-  padding: 30px 40px;
+  padding: 30px 40px 32px;
+}
+.settings__info .input {
+  width: 360px;
 }
 .settings__form .button {
-  min-width: 164px;
+  min-width: 140px;
 }
 .settings__title {
   font-weight: 500;
@@ -1915,7 +1951,7 @@ body.open {
   margin-bottom: 20px;
 }
 .settings__sessions {
-  padding-top: 30px;
+  padding-top: 32px;
 }
 .settings__sessions-header {
   margin-bottom: 24px;
@@ -1933,6 +1969,11 @@ body.open {
   line-height: 16px;
   color: #3252FC;
   background-color: transparent;
+}
+@media (any-hover: hover) {
+  .settings__sessions-close:hover {
+    color: rgba(50, 82, 252, 0.8);
+  }
 }
 .settings__sessions-list {
   display: flex;
@@ -1979,7 +2020,7 @@ body.open {
     padding: 30px 16px;
   }
   .settings__button {
-    width: 100%;
+    width: 360px;
   }
   .settings__sessions {
     padding-top: 18px;
@@ -2007,8 +2048,8 @@ body.open {
   }
 }
 @media (max-width: 576px) {
-  .settings__info {
-    max-width: 100%;
+  .settings__info .input {
+    width: 100%;
   }
   .settings__button {
     width: 100%;
