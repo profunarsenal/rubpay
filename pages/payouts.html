@@ -229,20 +229,20 @@
                 <div class="sidebar__tooltip tooltip">Свернуть</div>
             </button>
         </aside>
-        <div class="container">
+        <div class="container container-payouts">
             <div class="header-inner">
                 <div class="payments-header">
                     <div class="payments-buttons">
                         <button class="button button__tertiary icon-right bm-create-payout">
                             <span>Запросить выплату</span>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="#3252FC" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="payments-buttons__icon" width="20" height="20" viewBox="0 0 20 20" fill="#3252FC" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M10.75 5C10.75 4.58579 10.4142 4.25 10 4.25C9.58579 4.25 9.25 4.58579 9.25 5V9.25H5C4.58579 9.25 4.25 9.58579 4.25 10C4.25 10.4142 4.58579 10.75 5 10.75H9.25V15C9.25 15.4142 9.58579 15.75 10 15.75C10.4142 15.75 10.75 15.4142 10.75 15V10.75H15C15.4142 10.75 15.75 10.4142 15.75 10C15.75 9.58579 15.4142 9.25 15 9.25H10.75V5Z" />
                             </svg>
                         </button>
                         <button class="button button__tertiary icon-right bm-payouts-export">
                             <span>Экспорт</span>
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="#3252FC" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="payments-buttons__icon" width="20" height="20" viewBox="0 0 20 20" fill="#3252FC" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M6.23131 4.86757C6.99999 3.85155 8.23198 3.03906 10 3.03906C11.768 3.03906 13 3.85155 13.7687 4.86757C14.3237 5.60114 14.641 6.44297 14.7669 7.17095C15.6217 7.29593 16.4066 7.65695 17.0195 8.24396C17.7987 8.99035 18.25 10.0548 18.25 11.3215C18.25 13.026 17.2351 14.4924 15.7784 15.1502C15.4009 15.3207 14.9567 15.1529 14.7862 14.7753C14.6157 14.3978 14.7836 13.9536 15.1611 13.7831C16.0996 13.3593 16.75 12.4158 16.75 11.3215C16.75 10.4249 16.4387 9.7648 15.9819 9.3272C15.5195 8.88431 14.8579 8.62182 14.0805 8.62149C13.6664 8.62131 13.3308 8.28558 13.3308 7.87149C13.3308 7.34869 13.1139 6.48824 12.5725 5.77258C12.0542 5.08752 11.2457 4.53906 10 4.53906C8.75424 4.53906 7.94582 5.08752 7.42754 5.77258C6.88612 6.48823 6.66919 7.34868 6.66919 7.87149C6.66919 8.28319 6.33731 8.61793 5.92562 8.62146C5.1452 8.62815 4.48123 8.89191 4.01802 9.33395C3.56118 9.76989 3.25 10.4259 3.25 11.3215C3.25 12.4158 3.90045 13.3593 4.83895 13.7831C5.21646 13.9536 5.38428 14.3979 5.2138 14.7754C5.04331 15.1529 4.59908 15.3207 4.22158 15.1502C2.76495 14.4924 1.75 13.0261 1.75 11.3215C1.75 10.0539 2.2026 8.99296 2.98246 8.24876C3.59569 7.66358 4.37999 7.30372 5.23241 7.17499C5.35786 6.44609 5.67529 5.60251 6.23131 4.86757Z" />
                                 <path
@@ -254,7 +254,7 @@
                         <div class="filter">
                             <button class="button button__outline icon-right filter-button">
                                 <span>Фильтры</span>
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="payments-filters__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M13.1193 11.8391C14.4254 11.8391 15.4827 12.8978 15.4827 14.2032C15.4827 15.5094 14.4254 16.568 13.1193 16.568C11.813 16.568 10.7547 15.5094 10.7547 14.2032C10.7547 12.8978 11.813 11.8391 13.1193 11.8391Z"
                                         stroke="#8A8E98" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round" />
@@ -441,6 +441,64 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="table-adaptive">
+                    <ul class="table-adaptive__list">
+                        <li class="table-adaptive__item">
+                            <div class="table-adaptive__row">
+                                <div class="table-adaptive__title">ID</div>
+                                <div class="table-adaptive__value">
+                                    <div>
+                                        <span>101639213</span>
+                                        <span class="payouts__table-api">API</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-adaptive__row">
+                                <div class="table-adaptive__title">Касса</div>
+                                <div class="table-adaptive__value">4</div>
+                            </div>
+                            <div class="table-adaptive__row">
+                                <div class="table-adaptive__title">Заказ</div>
+                                <div class="table-adaptive__value">52357</div>
+                            </div>
+                            <div class="table-adaptive__row">
+                                <div class="table-adaptive__title">Списано</div>
+                                <div class="table-adaptive__value">300₽</div>
+                            </div>
+                            <div class="table-adaptive__row">
+                                <div class="table-adaptive__title">Зачислено</div>
+                                <div class="table-adaptive__value">279₽</div>
+                            </div>
+                            <div class="table-adaptive__row">
+                                <div class="table-adaptive__title">Способ выплаты</div>
+                                <div class="table-adaptive__value">Банковская карта</div>
+                            </div>
+                            <div class="table-adaptive__row">
+                                <div class="table-adaptive__title">Чек ID</div>
+                                <div class="table-adaptive__value payouts__pay">
+                                    <div>5336 6902 6861 0211</div>
+                                    <div class="payouts__bank">Сбербанк</div>
+                                </div>
+                            </div>
+                            <div class="table-adaptive__row">
+                                <div class="table-adaptive__title">Статус</div>
+                                <div class="table-adaptive__value">
+                                    <div class="payouts__status-sucess">71 мин</div>
+                                </div>
+                            </div>
+                            <div class="table-adaptive__row">
+                                <div class="table-adaptive__title">Дата</div>
+                                <div class="table-adaptive__value payouts__date">
+                                    <span>04.06.23</span>
+                                    <span class="payouts__time">14:20</span>
+                                </div>
+                            </div>
+                            <div class="table-adaptive__row payments__buttons">
+                                <button class="button button__outline bm-payouts-info">Подробнее</button>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </main>
         </div>

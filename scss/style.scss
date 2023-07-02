@@ -63,11 +63,15 @@ body {
 @media(max-width: 767px) {
     .container {
         margin-left: 0;
-        height: calc(100vh - 52px);
-        overflow-y: auto;
         &.collapse {
             margin-left: 0;
         }
+    }
+
+    .container-payments,
+    .container-payouts {
+        height: calc(100vh - 52px);
+        overflow-y: auto;
     }
 }
 // COMMON
@@ -124,6 +128,7 @@ body {
 @media(max-width: 767px) {
   .modal {
     &__close {
+        top: -22px;
         right: -6px;
     }
   }
@@ -924,14 +929,22 @@ body {
         &__list {
             display: flex;
             flex-direction: column;
-            border-top: 1px solid $gray-light;
         }
 
         &__item {
+            position: relative;
             display: flex;
             flex-direction: column;
             padding: 8px 0 16px 0;
-            border-bottom: 1px solid $gray-light;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: $gray-light;
+            }
         }
 
         &__row {
@@ -1563,30 +1576,42 @@ body {
 }
 
 @media(max-width: 767px) {
-  .payments-buttons {
-    flex: 1 1 100%;
-    .button {
-        flex: 1 1 50%;
-        justify-content: center;
+    .payments-buttons {
+        flex: 1 1 100%;
+
+        &__icon {
+            display: none;
+        }
+
+        .button {
+            padding: 10px 16px;
+            flex: 1 1 50%;
+            justify-content: center;
+        }
     }
-  }
-  .payments-filters {
-      flex: 1 1 100%;
 
-      .filter,
-      .search {
-          flex: 1 1 50%;
-      }
+    .payments-filters {
+        flex: 1 1 100%;
 
-      .search__input {
-        width: 100%;
-      }
+        &__icon {
+            display: none;
+        }
 
-      .filter .button {
-        width: 100%;
-        justify-content: center;
-      }
-  }
+        .filter,
+        .search {
+            flex: 1 1 50%;
+        }
+
+        .search__input {
+            width: 100%;
+        }
+
+        .filter .button {
+            padding: 10px 16px;
+            width: 100%;
+            justify-content: center;
+        }
+    }
 }
 
 .payments {
@@ -1846,6 +1871,33 @@ body {
             width: 1216px;
         }
     }
+}
+
+@media(max-width: 767px) {
+  .payouts {
+    &__table {
+        display: none;
+    }
+
+    &__table-api {
+        margin-left: 4px;
+    }
+
+    &__pay {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__status-sucess {
+        padding: 2px 12px;
+        width: 130px;
+        text-align: center;
+    }
+
+    &__date {
+        gap: 6px;
+    }
+  }
 }
 
 .payouts-export {

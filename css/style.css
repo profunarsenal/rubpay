@@ -133,11 +133,14 @@ body.open {
 @media (max-width: 767px) {
   .container {
     margin-left: 0;
-    height: calc(100vh - 52px);
-    overflow-y: auto;
   }
   .container.collapse {
     margin-left: 0;
+  }
+  .container-payments,
+  .container-payouts {
+    height: calc(100vh - 52px);
+    overflow-y: auto;
   }
 }
 .modal {
@@ -189,6 +192,7 @@ body.open {
 
 @media (max-width: 767px) {
   .modal__close {
+    top: -22px;
     right: -6px;
   }
 }
@@ -902,13 +906,21 @@ body.open {
   .table-adaptive__list {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid #E5E6E8;
   }
   .table-adaptive__item {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 8px 0 16px 0;
-    border-bottom: 1px solid #E5E6E8;
+  }
+  .table-adaptive__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #E5E6E8;
   }
   .table-adaptive__row {
     display: flex;
@@ -1447,12 +1459,19 @@ body.open {
   .payments-buttons {
     flex: 1 1 100%;
   }
+  .payments-buttons__icon {
+    display: none;
+  }
   .payments-buttons .button {
+    padding: 10px 16px;
     flex: 1 1 50%;
     justify-content: center;
   }
   .payments-filters {
     flex: 1 1 100%;
+  }
+  .payments-filters__icon {
+    display: none;
   }
   .payments-filters .filter,
   .payments-filters .search {
@@ -1462,6 +1481,7 @@ body.open {
     width: 100%;
   }
   .payments-filters .filter .button {
+    padding: 10px 16px;
     width: 100%;
     justify-content: center;
   }
@@ -1667,6 +1687,26 @@ body.open {
   }
   .payouts__table-header, .payouts__table-content {
     width: 1216px;
+  }
+}
+@media (max-width: 767px) {
+  .payouts__table {
+    display: none;
+  }
+  .payouts__table-api {
+    margin-left: 4px;
+  }
+  .payouts__pay {
+    display: flex;
+    flex-direction: column;
+  }
+  .payouts__status-sucess {
+    padding: 2px 12px;
+    width: 130px;
+    text-align: center;
+  }
+  .payouts__date {
+    gap: 6px;
   }
 }
 .payouts-export__wrapper {

@@ -5,7 +5,7 @@ const filters = () => {
     if (filterBlock) {
         document.body.addEventListener("click", (e) => {
             if (e.target.closest(".filter-button")) {
-                filterBlock.classList.add("open");
+                filterBlock.classList.toggle("open");
             } else if (!e.target.closest(".filter__block")) {
                 filterBlock.classList.remove("open");
             }
