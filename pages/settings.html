@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/perfect-scrollbar@1.5.5/css/perfect-scrollbar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <title>Настройки</title>
 </head>
@@ -91,7 +90,7 @@
                     </a>
                 </li>
                 <li class="navigation__item">
-                    <a class="navigation__link" href="#">
+                    <button class="navigation__link bm-exit">
                         <svg class="navigation__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -100,7 +99,7 @@
                                 d="M16.4832 7.7679C16.1796 7.48605 15.7051 7.50364 15.4233 7.80719C15.1414 8.11073 15.159 8.58528 15.4625 8.86712L17.7704 11.01L10.6762 11.0103C10.262 11.0103 9.92624 11.3461 9.92625 11.7603C9.92627 12.1745 10.2621 12.5103 10.6763 12.5103L17.7702 12.51L15.4625 14.6528C15.159 14.9346 15.1414 15.4092 15.4233 15.7127C15.7051 16.0162 16.1796 16.0338 16.4832 15.752L20.1906 12.3095C20.3434 12.1676 20.4303 11.9685 20.4303 11.7599C20.4303 11.5514 20.3434 11.3522 20.1906 11.2103L16.4832 7.7679Z" />
                         </svg>
                         <span class="navigation__text">Выйти</span>
-                    </a>
+                    </button>
                 </li>
             </ul>
             <button class="header__burger">
@@ -211,7 +210,7 @@
                     <span class="sidebar__button-text">Поддержка</span>
                     <div class="sidebar__tooltip tooltip">Поддержка</div>
                 </a>
-                <a class="sidebar__button" href="#">
+                <button class="sidebar__button bm-exit">
                     <svg class="sidebar__button-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -221,7 +220,7 @@
                     </svg>
                     <span class="sidebar__button-text">Выйти</span>
                     <div class="sidebar__tooltip tooltip">Выйти</div>
-                </a>
+                </button>
             </div>
             <button class="sidebar__collapse-button">
                 <img class="sidebar__collapse-icon" src="../assets/img/arrow-tick.svg" alt="Свернуть">
@@ -261,7 +260,7 @@
                 <div class="settings__sessions">
                     <div class="settings__sessions-header">
                         <h2 class="settings__title">Активные сессии</h2>
-                        <button class="settings__sessions-close">Закрыть все сессии кроме текущей</button>
+                        <button class="settings__sessions-close bm-close-session">Закрыть все сессии кроме текущей</button>
                     </div>
                     <ul class="settings__sessions-list">
                         <li class="settings__sessions-item active">
@@ -322,8 +321,71 @@
                 <span class="footer__text">© 2023 RubPay, Inc</span>
             </div>
         </footer>
+        <div class="modal modal-confirm exit">
+            <div class="modal__wrapper exit__wrapper">
+                <button class="modal__close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6.55866 5.26742C6.2021 4.91086 5.62399 4.91086 5.26742 5.26742C4.91086 5.62399 4.91086 6.2021 5.26742 6.55866L10.7088 12L5.26742 17.4413C4.91086 17.7979 4.91086 18.376 5.26742 18.7326C5.62399 19.0891 6.2021 19.0891 6.55866 18.7326L12 13.2912L17.4413 18.7326C17.7979 19.0891 18.376 19.0891 18.7326 18.7326C19.0891 18.376 19.0891 17.7979 18.7326 17.4413L13.2912 12L18.7326 6.55866C19.0891 6.2021 19.0891 5.62399 18.7326 5.26742C18.376 4.91086 17.7979 4.91086 17.4413 5.26742L12 10.7088L6.55866 5.26742Z"
+                            fill="white" />
+                    </svg>
+                </button>
+                <form class="modal-confirm__content">
+                    <svg class="modal-confirm__icon" width="56" height="56" viewBox="0 0 56 56" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M18.8112 8.02002C13.16 8.02002 8.58002 12.6027 8.58002 18.2512V36.6251C8.58002 42.2756 13.1597 46.8584 18.8112 46.8584H33.7918C34.6202 46.8584 35.2918 46.1869 35.2918 45.3584C35.2918 44.53 34.6202 43.8584 33.7918 43.8584H18.8112C14.8176 43.8584 11.58 40.6197 11.58 36.6251V18.2512C11.58 14.2591 14.8173 11.02 18.8112 11.02H33.7918C34.6202 11.02 35.2918 10.3484 35.2918 9.52002C35.2918 8.69159 34.6202 8.02002 33.7918 8.02002H18.8112Z"
+                            fill="#8A8E98" fill-opacity="0.4" />
+                        <path
+                            d="M38.2907 18.3083C37.6836 17.7446 36.7345 17.7797 36.1708 18.3868C35.6071 18.9939 35.6423 19.943 36.2494 20.5067L42.1009 25.9399L24.9112 25.9407C24.0828 25.9407 23.4112 26.6123 23.4113 27.4407C23.4113 28.2691 24.0829 28.9407 24.9113 28.9407L42.1006 28.9399L36.2494 34.373C35.6423 34.9367 35.6071 35.8857 36.1708 36.4928C36.7345 37.0999 37.6836 37.1351 38.2907 36.5714L46.9413 28.539C47.247 28.2551 47.4207 27.8569 47.4207 27.4398C47.4207 27.0226 47.247 26.6244 46.9413 26.3405L38.2907 18.3083Z"
+                            fill="#8A8E98" fill-opacity="0.4" />
+                    </svg>
+                    <h5 class="modal-confirm__title">Выход из аккаунта</h5>
+                    <div class="modal-confirm__text">Вы действительно хотите выйти из аккаунта?</div>
+                    <div class="modal-confirm__buttons">
+                        <button class="button button__secondary">Отмена</button>
+                        <button class="button button__primary">Выйти</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal modal-confirm close-session">
+            <div class="modal__wrapper close-session__wrapper">
+                <button class="modal__close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6.55866 5.26742C6.2021 4.91086 5.62399 4.91086 5.26742 5.26742C4.91086 5.62399 4.91086 6.2021 5.26742 6.55866L10.7088 12L5.26742 17.4413C4.91086 17.7979 4.91086 18.376 5.26742 18.7326C5.62399 19.0891 6.2021 19.0891 6.55866 18.7326L12 13.2912L17.4413 18.7326C17.7979 19.0891 18.376 19.0891 18.7326 18.7326C19.0891 18.376 19.0891 17.7979 18.7326 17.4413L13.2912 12L18.7326 6.55866C19.0891 6.2021 19.0891 5.62399 18.7326 5.26742C18.376 4.91086 17.7979 4.91086 17.4413 5.26742L12 10.7088L6.55866 5.26742Z"
+                            fill="white" />
+                    </svg>
+                </button>
+                <form class="modal-confirm__content">
+                    <svg class="modal-confirm__icon" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.9287 15.6395C12.9287 14.8111 13.6003 14.1395 14.4287 14.1395H14.5529C15.3813 14.1395 16.0529 14.8111 16.0529 15.6395C16.0529 16.468 15.3813 17.1395 14.5529 17.1395H14.4287C13.6003 17.1395 12.9287 16.468 12.9287 15.6395Z"
+                            fill="#8A8E98" fill-opacity="0.4" />
+                        <path
+                            d="M18.39 15.6395C18.39 14.8111 19.0616 14.1395 19.89 14.1395H20.0142C20.8427 14.1395 21.5142 14.8111 21.5142 15.6395C21.5142 16.468 20.8427 17.1395 20.0142 17.1395H19.89C19.0616 17.1395 18.39 16.468 18.39 15.6395Z"
+                            fill="#8A8E98" fill-opacity="0.4" />
+                        <path
+                            d="M23.8514 15.6395C23.8514 14.8111 24.5229 14.1395 25.3514 14.1395H25.4757C26.3041 14.1395 26.9757 14.8111 26.9757 15.6395C26.9757 16.468 26.3041 17.1395 25.4757 17.1395H25.3514C24.5229 17.1395 23.8514 16.468 23.8514 15.6395Z"
+                            fill="#8A8E98" fill-opacity="0.4" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M17.7082 6.34003C14.108 6.34003 11.0683 7.62418 8.93592 9.91139C6.81442 12.1869 5.70117 15.3353 5.70117 18.8832V36.3427C5.70117 39.8885 6.80837 43.0376 8.92774 45.3145C11.0584 47.6036 14.099 48.8879 17.7082 48.8879H21.5549C22.3833 48.8879 23.0549 48.2163 23.0549 47.3879C23.0549 46.5595 22.3833 45.8879 21.5549 45.8879H17.7082C14.8402 45.8879 12.6272 44.8859 11.1237 43.2706C9.60886 41.6431 8.70117 39.2695 8.70117 36.3427V23.6025H45.2492V29.9307C45.2492 30.7591 45.9207 31.4307 46.7492 31.4307C47.5776 31.4307 48.2492 30.7591 48.2492 29.9307V18.8832C48.2492 15.3372 47.142 12.1885 45.0221 9.91204C42.891 7.62345 39.8498 6.34003 36.2398 6.34003H17.7082ZM45.2492 20.6025V18.8832C45.2492 15.9562 44.3415 13.5833 42.8266 11.9565C41.3229 10.3417 39.1094 9.34003 36.2398 9.34003H17.7082C14.8508 9.34003 12.6369 10.341 11.1302 11.9571C9.61261 13.5849 8.70117 15.9581 8.70117 18.8832V20.6025H45.2492Z"
+                            fill="#8A8E98" fill-opacity="0.4" />
+                        <path
+                            d="M35.317 38.1744C34.7313 37.5885 33.7816 37.5884 33.1957 38.1741C32.6099 38.7598 32.6097 39.7096 33.1955 40.2955L36.5965 43.6973L33.1955 47.0992C32.6097 47.6851 32.6099 48.6348 33.1957 49.2206C33.7816 49.8063 34.7313 49.8061 35.317 49.2203L38.7175 45.8189L42.118 49.2203C42.7038 49.8061 43.6535 49.8063 44.2394 49.2206C44.8252 48.6348 44.8253 47.6851 44.2396 47.0992L40.8386 43.6973L44.2396 40.2955C44.8253 39.7096 44.8252 38.7598 44.2394 38.1741C43.6535 37.5884 42.7038 37.5885 42.118 38.1744L38.7175 41.5758L35.317 38.1744Z"
+                            fill="#8A8E98" fill-opacity="0.4" />
+                    </svg>
+                    <h5 class="modal-confirm__title">Закрыть все сессии</h5>
+                    <div class="modal-confirm__text">Вы действительно хотите закрыть все сессии кроме текущей?</div>
+                    <div class="modal-confirm__buttons">
+                        <button class="button button__secondary">Отмена</button>
+                        <button class="button button__primary">Закрыть</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/perfect-scrollbar@1.5.5/dist/perfect-scrollbar.min.js"></script>
     <script type="module" src="../js/script.js"></script>
 </body>
 

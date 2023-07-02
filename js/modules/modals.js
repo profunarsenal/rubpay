@@ -9,6 +9,8 @@ const modals = () => {
         "payouts-export",
         "create-payout",
         "payouts-info",
+        "exit",
+        "close-session",
     ];
 
     const openModal = (modal) => {
