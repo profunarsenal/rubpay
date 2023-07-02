@@ -38,7 +38,7 @@ const datepicker = () => {
         },
         autoClose: true,
         position: 'bottom right',
-        container: document.querySelector(".export__content")
+        container: document.querySelector(".payouts-export")
     });
 };
 
