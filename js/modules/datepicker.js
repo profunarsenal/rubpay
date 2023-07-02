@@ -5,23 +5,41 @@ const datepicker = () => {
         }
     };
 
-    const options = {
+    new AirDatepicker('#payments-filter-date', {
         onSelect(date) {
             setClassFocused(date.date, date.datepicker.$el);
         },
         autoClose: true,
-        // isMobile: window.innerWidth < 767 ? true : false,
-    }
+        position: 'bottom right',
+        container: document.querySelector(".filter__block")
+    });
 
-    const paymentsFilter = new AirDatepicker('#payments-date-filter', options);
-    const paymentsExport = new AirDatepicker('#payments-export-date', options);
+    new AirDatepicker('#payouts-filter-date', {
+        onSelect(date) {
+            setClassFocused(date.date, date.datepicker.$el);
+        },
+        autoClose: true,
+        position: 'bottom right',
+        container: document.querySelector(".filter__block")
+    });
 
-    // window.addEventListener("resize", () => {
-    //     options.isMobile = window.innerWidth < 767 ? true : false;
+    new AirDatepicker('#payments-export-date', {
+        onSelect(date) {
+            setClassFocused(date.date, date.datepicker.$el);
+        },
+        autoClose: true,
+        position: 'bottom right',
+        container: document.querySelector(".export__content")
+    });
 
-    //     paymentsFilter.update(options);
-    //     paymentsExport.update(options);
-    // })
+    new AirDatepicker('#payouts-export-date', {
+        onSelect(date) {
+            setClassFocused(date.date, date.datepicker.$el);
+        },
+        autoClose: true,
+        position: 'bottom right',
+        container: document.querySelector(".export__content")
+    });
 };
 
 export default datepicker;
