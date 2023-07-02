@@ -847,7 +847,12 @@ body.open {
 }
 @media (max-width: 767px) {
   .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     margin-left: 0;
+    background-color: #FFFFFF;
   }
   .footer.collapse {
     margin-left: 0;
@@ -880,6 +885,15 @@ body.open {
   height: 1px;
   background-color: #E5E6E8;
 }
+.table__row-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #E5E6E8;
+}
 .table__item-header {
   padding: 12px 0;
   color: #8A8E98;
@@ -894,7 +908,6 @@ body.open {
   justify-content: center;
   gap: 20px;
   padding: 0 40px;
-  border-top: 1px solid #E5E6E8;
   cursor: pointer;
 }
 @media (any-hover: hover) {
@@ -903,7 +916,7 @@ body.open {
   }
 }
 .table__item {
-  padding: 12px 0;
+  padding: 10px 0;
   font-size: 12px;
   line-height: 20px;
   white-space: nowrap;
@@ -1290,7 +1303,17 @@ body.open {
   padding: 0 80px 0 40px;
 }
 .checkout__table-row {
+  position: relative;
   padding: 0 80px 0 40px;
+}
+.checkout__table-row::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #E5E6E8;
 }
 @media (any-hover: hover) {
   .checkout__table-row:hover .bm-edit-checkout {
@@ -1372,6 +1395,15 @@ body.open {
   bottom: 0;
   width: 100%;
   background-color: #FFFFFF;
+}
+.checkout__total::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #E5E6E8;
 }
 @media (any-hover: hover) {
   .checkout__total:hover {
@@ -1471,6 +1503,18 @@ body.open {
 .checkout-info__table-content {
   height: 360px;
   overflow-y: auto;
+}
+.checkout-info__table-content .table__row {
+  position: relative;
+}
+.checkout-info__table-content .table__row::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #E5E6E8;
 }
 .checkout-info__table-item:nth-child(1) {
   flex: 0 1 49.39%;
@@ -1584,7 +1628,7 @@ body.open {
   }
 }
 .payments__table-content {
-  height: calc(100vh - 237px);
+  height: calc(100vh - 224px);
   overflow-y: auto;
 }
 .payments__table-header .payments__table-item {
@@ -1599,15 +1643,6 @@ body.open {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #E5E6E8;
-}
-.payments__table-row:first-child::after {
-  content: "";
-  position: absolute;
-  top: 0;
   left: 0;
   width: 100%;
   height: 1px;
@@ -1772,8 +1807,11 @@ body.open {
   }
 }
 .payouts__table-content {
-  height: calc(100vh - 237px);
+  height: calc(100vh - 224px);
   overflow-y: auto;
+}
+.payouts__table-header .payouts__table-item {
+  padding: 12px 0;
 }
 .payouts__table-row {
   position: relative;
