@@ -139,7 +139,7 @@ body.open {
   }
   .container-payments,
   .container-payouts {
-    height: calc(100vh - 116px);
+    height: calc(100vh - 52px);
     overflow-y: auto;
   }
 }
@@ -2169,4 +2169,11 @@ body.open {
 }
 .air-datepicker {
   z-index: 999;
+}
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
 }
