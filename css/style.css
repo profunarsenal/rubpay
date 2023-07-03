@@ -391,7 +391,7 @@ body.open {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 16px 12px 24px;
+  padding: 12px 16px 12px 20px;
 }
 .button__primary {
   color: #FFFFFF;
@@ -452,7 +452,7 @@ body.open {
     background-color: rgba(229, 230, 232, 0.5);
   }
 }
-.button__outline:active {
+.button__outline.active, .button__outline:active {
   background-color: rgba(229, 230, 232, 0.5);
 }
 .button__outline:disabled {
@@ -461,6 +461,7 @@ body.open {
 
 @media (max-width: 767px) {
   .button {
+    max-height: 40px;
     padding: 10px 16px;
   }
 }
@@ -533,8 +534,13 @@ body.open {
   }
 }
 @media (max-width: 767px) {
+  .search__icon, .search__clear {
+    top: 10px;
+  }
   .search__input {
+    max-height: 40px;
     max-width: 100%;
+    padding: 10px 16px 10px 44px;
   }
 }
 .pagination {
@@ -628,6 +634,7 @@ body.open {
   padding: 16px;
   border-radius: 28px;
   background-color: #FFFFFF;
+  border: 1px solid #E5E6E8;
   box-shadow: 0px 6px 34px 0px rgba(22, 24, 25, 0.12);
   opacity: 0;
   visibility: hidden;
@@ -664,7 +671,7 @@ body.open {
     transform: translateX(50%);
   }
 }
-@media (max-width: 833px) {
+@media (max-width: 821px) {
   .filter__block {
     width: 90%;
     top: 130px;
@@ -674,7 +681,7 @@ body.open {
 }
 @media (max-width: 767px) {
   .filter__block {
-    top: 186px;
+    top: 178px;
     width: 92%;
   }
   .filter__fields {
@@ -1076,7 +1083,7 @@ body.open {
   flex-direction: column;
   width: 224px;
   height: 100%;
-  padding: 32px 14px 12px;
+  padding: 32px 12px 12px;
   background-color: #FFFFFF;
   transition: all 0.3s ease;
 }
@@ -1091,6 +1098,7 @@ body.open {
 }
 .sidebar.collapse {
   width: 72px;
+  padding: 32px 14px 12px;
 }
 .sidebar.collapse .sidebar__item-text,
 .sidebar.collapse .sidebar__button-text,
@@ -1112,13 +1120,15 @@ body.open {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
 }
 .sidebar.collapse .sidebar__item:hover .sidebar__tooltip,
 .sidebar.collapse .sidebar__button:hover .sidebar__tooltip {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
+}
+.sidebar.collapse .sidebar__link {
+  padding: 10px;
 }
 .sidebar__collapse-button {
   position: absolute;
@@ -1157,7 +1167,6 @@ body.open {
 .sidebar__item {
   position: relative;
   border-radius: 100px;
-  padding: 10px 12px;
   transition: all 0.3s ease;
 }
 @media (any-hover: hover) {
@@ -1194,6 +1203,7 @@ body.open {
   justify-content: flex-start;
   align-items: center;
   gap: 12px;
+  padding: 10px 12px;
 }
 .sidebar__item-icon, .sidebar__button-icon {
   width: 24px;
@@ -1221,7 +1231,7 @@ body.open {
   width: 100%;
   max-height: 44px;
   gap: 12px;
-  padding: 12px;
+  padding: 10px 12px;
   background-color: #FFFFFF;
   border-radius: 100px;
   transition: all 0.3s ease;
@@ -1614,9 +1624,11 @@ body.open {
   .payments-filters__icon {
     display: none;
   }
-  .payments-filters .filter,
+  .payments-filters .filter {
+    flex: 0 1 30%;
+  }
   .payments-filters .search {
-    flex: 1 1 50%;
+    flex: 1 1 auto;
   }
   .payments-filters .search__input {
     width: 100%;
@@ -1625,6 +1637,14 @@ body.open {
     padding: 10px 16px;
     width: 100%;
     justify-content: center;
+  }
+}
+@media (max-width: 576px) {
+  .payments-filters .filter {
+    flex: 0 1 auto;
+  }
+  .payments-filters .search {
+    flex: 1 1 auto;
   }
 }
 .payments__table-content {
@@ -1715,7 +1735,7 @@ body.open {
     width: 1216px;
   }
 }
-@media (max-width: 833px) {
+@media (max-width: 821px) {
   .payments__table-content {
     height: calc(100vh - 273px);
   }
@@ -1831,6 +1851,7 @@ body.open {
   padding: 2px 4px;
   border-radius: 6px;
   background-color: rgba(229, 230, 232, 0.5);
+  line-height: 12px;
 }
 .payouts__bank, .payouts__time {
   color: #8A8E98;
@@ -1839,6 +1860,7 @@ body.open {
   padding: 6px 12px;
   border-radius: 56px;
   background-color: rgba(80, 219, 148, 0.2);
+  text-align: center;
 }
 .payouts__table-info {
   text-align: center;
@@ -1847,7 +1869,7 @@ body.open {
   vertical-align: text-top;
 }
 .payouts__table-item {
-  padding: 4px 0;
+  padding: 10px 0;
 }
 .payouts__table-item:nth-child(1) {
   flex: 0 1 8.06%;
@@ -1879,6 +1901,9 @@ body.open {
 .payouts__table-item:nth-child(10) {
   flex: 0 1 3.13%;
 }
+.payouts__status {
+  padding: 4px 0;
+}
 
 @media (max-width: 1300px) {
   .payouts__table {
@@ -1888,7 +1913,7 @@ body.open {
     width: 1216px;
   }
 }
-@media (max-width: 833px) {
+@media (max-width: 821px) {
   .payouts__table-content {
     height: calc(100vh - 273px);
   }
@@ -2001,7 +2026,7 @@ body.open {
   padding-top: 32px;
 }
 .settings__sessions-header {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   padding-left: 40px;
 }
 .settings__sessions-header > .settings__title {
@@ -2069,6 +2094,11 @@ body.open {
   .settings__button {
     width: 360px;
   }
+  .settings__title {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 12px;
+  }
   .settings__sessions {
     padding-top: 18px;
   }
@@ -2078,6 +2108,7 @@ body.open {
     align-items: flex-start;
     flex-direction: column;
     padding-left: 16px;
+    margin-bottom: 12px;
   }
   .settings__sessions-header > .settings__title {
     margin-right: 0;

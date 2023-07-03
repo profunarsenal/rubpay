@@ -348,7 +348,7 @@ body {
         display: flex;
         align-items: center;
         gap: 12px;
-        padding: 12px 16px 12px 24px;
+        padding: 12px 16px 12px 20px;
     }
 
     &__primary {
@@ -412,6 +412,7 @@ body {
             background-color: rgba($gray-light, 0.5);
           }
         }
+        &.active,
         &:active {
             background-color: rgba($gray-light, 0.5);
         }
@@ -423,6 +424,7 @@ body {
 
 @media(max-width: 767px) {
   .button {
+    max-height: 40px;
     padding: 10px 16px;
   }
 }
@@ -502,8 +504,15 @@ body {
 
 @media(max-width: 767px) {
     .search {
+        &__icon,
+        &__clear {
+            top: 10px;
+        }
+
         &__input {
+            max-height: 40px;
             max-width: 100%;
+            padding: 10px 16px 10px 44px;
         }
     }
 }
@@ -609,6 +618,7 @@ body {
         padding: 16px;
         border-radius: 28px;
         background-color: $white;
+        border: 1px solid $gray-light;
         box-shadow: 0px 6px 34px 0px rgba($black, 0.12);
         opacity: 0;
         visibility: hidden;
@@ -652,7 +662,7 @@ body {
   }
 }
 
-@media(max-width: 833px) {
+@media(max-width: 821px) {
     .filter {
         &__block {
             width: 90%;
@@ -666,7 +676,7 @@ body {
 @media(max-width: 767px) {
     .filter {
         &__block {
-            top: 186px;
+            top: 178px;
             width: 92%;
         }
 
@@ -1113,7 +1123,7 @@ body {
     flex-direction: column;
     width: 224px;
     height: 100%;
-    padding: 32px 14px 12px;
+    padding: 32px 12px 12px;
     background-color: $white;
     transition: all 0.3s ease;
     &::before {
@@ -1127,6 +1137,7 @@ body {
     }
     &.collapse {
         width: 72px;
+        padding: 32px 14px 12px;
         .sidebar__item-text,
         .sidebar__button-text,
         .sidebar__item.active::after,
@@ -1147,12 +1158,14 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 10px;
             &:hover .sidebar__tooltip {
                 opacity: 1;
                 visibility: visible;
                 pointer-events: all;
             }
+        }
+        .sidebar__link {
+            padding: 10px;
         }
     }
 
@@ -1199,7 +1212,6 @@ body {
     &__item {
         position: relative;
         border-radius: 100px;
-        padding: 10px 12px;
         transition: all 0.3s ease;
         @media(any-hover:hover) {
         &:hover {
@@ -1239,6 +1251,7 @@ body {
         justify-content: flex-start;
         align-items: center;
         gap: 12px;
+        padding: 10px 12px;
     }
 
     &__item-icon,
@@ -1271,7 +1284,7 @@ body {
         width: 100%;
         max-height: 44px;
         gap: 12px;
-        padding: 12px;
+        padding: 10px 12px;
         background-color: $white;
         border-radius: 100px;
         transition: all 0.3s ease;
@@ -1751,9 +1764,12 @@ body {
             display: none;
         }
 
-        .filter,
+        .filter {
+            flex: 0 1 30%;
+        }
+
         .search {
-            flex: 1 1 50%;
+            flex: 1 1 auto;
         }
 
         .search__input {
@@ -1766,6 +1782,18 @@ body {
             justify-content: center;
         }
     }
+}
+
+@media(max-width: 576px) {
+  .payments-filters {
+    .filter {
+        flex: 0 1 auto;
+    }
+
+    .search {
+        flex: 1 1 auto;
+    }
+  }
 }
 
 .payments {
@@ -1870,7 +1898,7 @@ body {
     }
 }
 
-@media(max-width: 833px) {
+@media(max-width: 821px) {
     .payments {
         &__table-content {
             height: calc(100vh - 273px);
@@ -2023,6 +2051,7 @@ body {
         padding: 2px 4px;
         border-radius: 6px;
         background-color: rgba($gray-light, 0.5);
+        line-height: 12px;
     }
 
     &__bank,
@@ -2034,6 +2063,7 @@ body {
         padding: 6px 12px;
         border-radius: 56px;
         background-color: rgba($green, 0.2);
+        text-align: center;
     }
 
     &__table-info {
@@ -2044,7 +2074,7 @@ body {
     }
 
     &__table-item {
-        padding: 4px 0;
+        padding: 10px 0;
 
         &:nth-child(1) {
             flex: 0 1 8.06%;
@@ -2086,6 +2116,10 @@ body {
             flex: 0 1 3.13%;
         }
     }
+
+    &__status {
+        padding: 4px 0;
+    }
 }
 
 @media(max-width: 1300px) {
@@ -2101,7 +2135,7 @@ body {
     }
 }
 
-@media(max-width: 833px) {
+@media(max-width: 821px) {
     .payouts {
         &__table-content {
             height: calc(100vh - 273px);
@@ -2255,7 +2289,7 @@ body {
     }
 
     &__sessions-header {
-        margin-bottom: 24px;
+        margin-bottom: 20px;
         padding-left: 40px;
         & > .settings__title {
             display: inline-block;
@@ -2332,6 +2366,12 @@ body {
             width: 360px;
         }
 
+        &__title {
+            font-size: 20px;
+            line-height: 28px;
+            margin-bottom: 12px;
+        }
+
         &__sessions {
             padding-top: 18px;
         }
@@ -2342,6 +2382,7 @@ body {
             align-items: flex-start;
             flex-direction: column;
             padding-left: 16px;
+            margin-bottom: 12px;
             & > .settings__title {
                 margin-right: 0;
             }

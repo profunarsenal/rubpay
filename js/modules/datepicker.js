@@ -11,6 +11,8 @@ const datepicker = () => {
         },
         autoClose: true,
         position: 'bottom right',
+        range: true,
+        multipleDatesSeparator: ' - ',
         container: document.querySelector(".filter__block")
     });
 
@@ -20,6 +22,8 @@ const datepicker = () => {
         },
         autoClose: true,
         position: 'bottom right',
+        range: true,
+        multipleDatesSeparator: ' - ',
         container: document.querySelector(".filter__block")
     });
 
@@ -29,6 +33,8 @@ const datepicker = () => {
         },
         autoClose: true,
         position: 'bottom right',
+        range: true,
+        multipleDatesSeparator: ' - ',
         container: document.querySelector(".export__content")
     });
 
@@ -38,6 +44,8 @@ const datepicker = () => {
         },
         autoClose: true,
         position: 'bottom right',
+        range: true,
+        multipleDatesSeparator: ' - ',
         container: document.querySelector(".payouts-export")
     });
 };
