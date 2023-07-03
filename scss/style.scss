@@ -2559,6 +2559,75 @@ body {
 .air-datepicker {
     font-family: "Suisse Int'l";
     z-index: 999;
+    border-radius: 12px;
+    border: 1px solid $gray-light;
+    background-color: $white;
+    box-shadow: 0px 6px 34px 0px rgba($black, 0.12);
+}
+
+.air-datepicker-nav--title {
+    font-size: 14px;
+    font-weight: 450;
+    line-height: 20px;
+    color: $black;
+    &:hover {
+        background-color: rgba($gray-light, 0.40);
+    }
+    i {
+        color: rgba($gray-dark, 0.60);
+    }
+}
+
+.air-datepicker-cell {
+    font-size: 12px;
+    line-height: 20px;
+    color: $black;
+    border-radius: 8px;
+    &:hover {
+        background-color: rgba($gray-light, 0.40);
+    }
+    &.-current- {
+        color: $blue;
+    }
+    &.-other-month- {
+       color: rgba($gray-dark, 0.5);
+    }
+    &.-selected- {
+        color: $white;
+        background-color: $blue;
+    }
+    &.-in-range- {
+        background-color: rgba($blue, 0.08);
+    }
+    &.-focus- {
+        background-color: rgba($blue, 0.18);
+    }
+}
+
+.air-datepicker-body--day-name {
+    font-size: 12px;
+    font-weight: 450;
+    line-height: 20px;
+    color: $gray-dark;
+}
+
+.air-datepicker-nav--action {
+    border-radius: 10px;
+    &:hover {
+        background-color: rgba($gray-light, 0.40);
+    }
+    &:active {
+        background-color: rgba($gray-light, 0.60);
+    }
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+    path {
+        fill: rgba($gray-dark, 0.6);
+        stroke-width: 0;
+        stroke: none;
+    }
 }
 
 // RESET CONTUR
