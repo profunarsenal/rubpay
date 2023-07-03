@@ -2289,11 +2289,11 @@ body.open {
   color: #FFFFFF;
   background-color: #3252FC;
 }
+.air-datepicker-cell.-selected-.-focus- {
+  background-color: #3252FC;
+}
 .air-datepicker-cell.-in-range- {
   background-color: rgba(50, 82, 252, 0.08);
-}
-.air-datepicker-cell.-focus- {
-  background-color: rgba(50, 82, 252, 0.18);
 }
 
 .air-datepicker-body--day-name {
