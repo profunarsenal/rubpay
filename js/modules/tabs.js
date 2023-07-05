@@ -1,17 +1,15 @@
 const tabs = () => {
     const tabsCheckoutInfo = document.querySelector(".checkout-info__tabs")
-    const tabPayment = document.getElementById("tab-payment");
-    const tabPayout = document.getElementById("tab-payout");
 
-    if (tabPayout) {
-        tabPayout.addEventListener("click", () => {
-            tabsCheckoutInfo.classList.add("toggle");
-        });
-    }
+    if (tabsCheckoutInfo) {
+        tabsCheckoutInfo.addEventListener("click", (e) => {
+            if (e.target.closest("#tab-payout")) {
+                tabsCheckoutInfo.classList.add("toggle");
+            }
 
-    if (tabPayment) {
-        tabPayment.addEventListener("click", () => {
-            tabsCheckoutInfo.classList.remove("toggle");
+            if (e.target.closest("#tab-payment")) {
+                tabsCheckoutInfo.classList.remove("toggle");
+            }
         });
     }
 };

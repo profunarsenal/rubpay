@@ -1160,8 +1160,12 @@ body {
                 pointer-events: all;
             }
         }
+        .sidebar__button {
+            padding: 10px;
+        }
         .sidebar__link {
             padding: 10px;
+            justify-content: center;
         }
     }
 
@@ -1252,8 +1256,10 @@ body {
 
     &__item-icon,
     &__button-icon {
-        width: 24px;
-        height: 24px;
+        min-width: 24px;
+        min-height: 24px;
+        max-width: 24px;
+        max-height: 24px;
         fill: $black;
     }
 
@@ -1305,6 +1311,8 @@ body {
 
 @media(max-width: 1366px) {
   .sidebar {
+    align-items: center;
+    padding: 32px 14px 12px;
     width: 72px;
     .sidebar__item-text,
     .sidebar__button-text,
@@ -1327,6 +1335,15 @@ body {
 
     &__collapse-button {
         display: none;
+    }
+
+    &__link {
+        padding: 10px;
+        justify-content: center;
+    }
+
+    &__button {
+        padding: 10px;
     }
   }
 }
@@ -1466,7 +1483,7 @@ body {
     }
 
     &__tooltip-edit {
-        top: -6px;
+        top: -7px;
         right: 30px;
         &::after {
             left: auto;
