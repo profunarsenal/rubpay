@@ -289,9 +289,9 @@ body.open {
   top: -7px;
   left: 0;
   width: 100%;
-  height: 108px;
+  height: 0;
   padding: 6px;
-  border-radius: 12px;
+  border-radius: 16px;
   background-color: #FFFFFF;
   box-shadow: 0px 6px 34px 0px rgba(22, 24, 25, 0.12);
   border: 1px solid #E5E6E8;
@@ -335,6 +335,7 @@ body.open {
   pointer-events: none;
 }
 .select.open .select__list {
+  height: 202px;
   opacity: 1;
   visibility: visible;
   pointer-events: all;
@@ -344,11 +345,6 @@ body.open {
   transform: rotate(180deg);
 }
 
-@media (max-width: 576px) {
-  .select.open .select__wrapper {
-    margin-bottom: 50px;
-  }
-}
 .select .input__field {
   cursor: pointer;
 }
@@ -1394,7 +1390,7 @@ body.open {
   flex: 0 1 17.93%;
 }
 .checkout__table-item:nth-child(7) {
-  flex: 0 1 3.29%;
+  flex: 0 1 40px;
 }
 .checkout__tooltip-edit {
   top: -6px;
@@ -1771,7 +1767,7 @@ body.open {
   flex: 0 1 9.05%;
 }
 .payments__table-item:nth-child(11) {
-  flex: 0 1 3.29%;
+  flex: 0 1 40px;
 }
 .payments__status {
   display: inline-block;
@@ -1941,6 +1937,8 @@ body.open {
   border-radius: 56px;
   background-color: rgba(80, 219, 148, 0.2);
   text-align: center;
+  max-width: -moz-max-content;
+  max-width: max-content;
 }
 .payouts__table-info {
   text-align: center;
@@ -1979,7 +1977,7 @@ body.open {
   flex: 0 1 10.86%;
 }
 .payouts__table-item:nth-child(10) {
-  flex: 0 1 3.13%;
+  flex: 0 1 40px;
 }
 .payouts__status {
   padding: 4px 0;

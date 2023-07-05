@@ -238,9 +238,9 @@ body {
         top: -7px;
         left: 0;
         width: 100%;
-        height: 108px;
+        height: 0;
         padding: 6px;
-        border-radius: 12px;
+        border-radius: 16px;
         background-color: $white;
         box-shadow: 0px 6px 34px 0px rgba($black, 0.12);
         border: 1px solid $gray-light;
@@ -288,6 +288,7 @@ body {
 
     &.open {
         .select__list {
+            height: 202px;
             opacity: 1;
             visibility: visible;
             pointer-events: all;
@@ -297,14 +298,6 @@ body {
             transform: rotate(180deg);
         }
     }
-}
-
-@media(max-width: 576px) {
-  .select {
-    &.open .select__wrapper {
-        margin-bottom: 50px;
-    }
-  }
 }
 
 .select .input__field {
@@ -1468,7 +1461,7 @@ body {
         }
 
         &:nth-child(7) {
-            flex: 0 1 3.29%;
+            flex: 0 1 40px;
         }
     }
 
@@ -1946,7 +1939,7 @@ body {
         }
     
         &:nth-child(11) {
-            flex: 0 1 3.29%;
+            flex: 0 1 40px;
         }
     }
 
@@ -2165,6 +2158,7 @@ body {
         border-radius: 56px;
         background-color: rgba($green, 0.2);
         text-align: center;
+        max-width: max-content;
     }
 
     &__table-info {
@@ -2214,7 +2208,7 @@ body {
         }
     
         &:nth-child(10) {
-            flex: 0 1 3.13%;
+            flex: 0 1 40px;
         }
     }
 
