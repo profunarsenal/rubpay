@@ -34,7 +34,10 @@ const modals = () => {
 
             if (window && buttons.length) {
                 buttons.forEach(button => {
-                    button.addEventListener("click", () => openModal(window));
+                    button.addEventListener("click", (e) => {
+                        e.stopPropagation();
+                        openModal(window);
+                    });
                 })
                 window.addEventListener("click", (e) => {
                     if (e.target.contains(window) || e.target.closest(".modal__close")) {

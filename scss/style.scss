@@ -51,7 +51,7 @@ body {
     }
 }
 
-@media(max-width: 1300px) {
+@media(max-width: 1366px) {
    .container {
         margin-left: 72px;
         &.collapse {
@@ -863,7 +863,7 @@ body {
     }
 }
 
-@media(max-width: 1300px) {
+@media(max-width: 1366px) {
     .footer {
         margin-left: 72px;
         &.collapse {
@@ -893,32 +893,22 @@ body {
 .table {
     &__content {
         overflow-x: hidden;
-        &.scroll .table__row{
-            width: calc(100% + 17px);
-        }
     }
 
     &__row-header {
         position: relative;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         gap: 20px;
         padding: 0 40px;
         background-color:rgba($gray-light, 0.15);
+        border-bottom: 1px solid $gray-light;
         &::before {
             content: "";
             position: absolute;
+            z-index: 10;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background-color: $gray-light;
-        }
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
             left: 0;
             width: 100%;
             height: 1px;
@@ -927,7 +917,7 @@ body {
     }
 
     &__item-header {
-        padding: 12px 0;
+        padding: 11.5px 0;
         color: $gray-dark;
         font-size: 14px;
         font-weight: 450;
@@ -938,7 +928,7 @@ body {
     &__row {
         display: flex;
         align-items: flex-start;
-        justify-content: center;
+        justify-content: space-between;
         gap: 20px;
         padding: 0 40px;
         cursor: pointer;
@@ -983,6 +973,13 @@ body {
     &__item-icon {
         fill: rgba($gray-dark, 0.6);
         transition: all 0.3s ease;
+        &.icon-show {
+            display: block;
+        }
+
+        &.icon-hide {
+            display: none;
+        }
     }
 
     &__item-tooltip {
@@ -1029,7 +1026,7 @@ body {
         }
 
         &__title {
-            flex: 1 0 45%;
+            flex: 0 1 45%;
             padding: 6px 0;
             font-size: 14px;
             font-weight: 450;
@@ -1313,7 +1310,7 @@ body {
     }
 }
 
-@media(max-width: 1300px) {
+@media(max-width: 1366px) {
   .sidebar {
     width: 72px;
     .sidebar__item-text,
@@ -1365,20 +1362,33 @@ body {
 .checkout {
     flex: 1 1 auto;
 
+    &__table {
+        height: calc(100vh - 132px);
+        overflow-y: auto;
+    }
+
     &__button {
         width: 24px;
         height: 24px;
         background-color: transparent;
     }
 
-    &__table-content {
-        position: relative;
-        height: calc(100vh - 176px);
-        overflow-y: auto;
-    }
-
     &__table-header {
+        position: sticky;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        background-color: #FFFFFF;
         padding: 0 80px 0 40px;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($gray-light, 0.15);
+        }
     }
 
     &__table-row {
@@ -1400,6 +1410,11 @@ body {
             pointer-events: all;
           }
         }
+        &:nth-last-child(-n+2) {
+            &::before {
+                height: 0;
+            }
+        }
     }
 
     &__table-info {
@@ -1411,7 +1426,7 @@ body {
 
         .bm-edit-checkout {
             position: absolute;
-            top: 12px;
+            top: 10px;
             right: -40px;
             opacity: 0;
             visibility: hidden;
@@ -1431,23 +1446,29 @@ body {
         &:nth-child(1) {
             flex: 0 1 7.07%;
         }
+
         &:nth-child(2) {
             flex: 0 1 16.45%;
         }
+
         &:nth-child(3) {
             flex: 0 1 21.38%;
         }
+
         &:nth-child(4) {
             flex: 0 1 11.51%;
         }
+
         &:nth-child(5) {
             flex: 0 1 13.82%;
         }
+
         &:nth-child(6) {
             flex: 0 1 17.93%;
         }
+
         &:nth-child(7) {
-            flex: 0 1 40px;
+            flex: 0 1 3.29%;
         }
     }
 
@@ -1477,8 +1498,16 @@ body {
     }
 
     &__api-value {
-        &.hide {
-            display: none;
+        display: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 100px;
+        .tooltip {
+            width: 0;
+        }
+        &.show {
+            display: block;
         }
     }
 
@@ -1511,7 +1540,16 @@ body {
     }
 }
 
-@media(max-width: 1300px) {
+.b-show-api {
+    &.active > .icon-hide {
+        display: block;
+    }
+    &.active > .icon-show {
+        display: none;
+    }
+}
+
+@media(max-width: 1366px) {
     .checkout {
         &__table {
             overflow-x: auto;
@@ -1519,7 +1557,7 @@ body {
 
         &__table-header,
         &__table-content {
-            width: 1216px;
+            min-width: 1216px;
         }
     }
 }
@@ -1594,6 +1632,9 @@ body {
         justify-content: center;
         align-items: center;
         background-color: rgba($gray-light, 0.6);
+        #tab-payment {
+            color: $black;
+        }
         &::after {
             content: "";
             position: absolute;
@@ -1602,10 +1643,16 @@ body {
             width: 50%;
             height: 90%;
             background-color: $white;
-            border-radius: 12px;
+            border-radius: 10px;
             transition: all 0.3s ease;
         }
         &.toggle {
+            #tab-payment {
+                color: $gray-dark
+            }
+            #tab-payout {
+                color: $black
+            }
             &::after {
                 left: 49.7%;
             }
@@ -1622,6 +1669,12 @@ body {
         line-height: 20px;
         color: $gray-dark;
         background-color: transparent;
+        transition: all 0.3s ease;
+        @media(any-hover:hover) {
+        &:hover {
+            color: $black;
+          }
+        }
     }
 
     &__tab-adaptive {
@@ -1629,8 +1682,6 @@ body {
     }
 
     &__table-content {
-        height: 360px;
-        overflow-y: auto;
         .table__row {
             position: relative;
             &::after {
@@ -1801,9 +1852,26 @@ body {
 }
 
 .payments {
-    &__table-content {
-        height: calc(100vh - 224px);
+    &__table {
+        height: calc(100vh - 180px);
         overflow-y: auto;
+    }
+
+    &__table-header {
+        position: sticky;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        background-color: #FFFFFF;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($gray-light, 0.15);
+        }
     }
 
     &__table-header .payments__table-item {
@@ -1823,6 +1891,11 @@ body {
             height: 1px;
             background-color: $gray-light;
         }
+        &:last-child {
+            &::before {
+                height: 0;
+            }
+        }
     }
 
     &__table-info {
@@ -1835,35 +1908,45 @@ body {
         &:nth-child(1) {
             flex: 0 1 8.06%;
         }
+    
         &:nth-child(2) {
             flex: 0 1 6.91%;
         }
+    
         &:nth-child(3) {
             flex: 0 1 6.58%;
         }
+    
         &:nth-child(4) {
             flex: 0 1 10.36%;
         }
+    
         &:nth-child(5) {
             flex: 0 1 10.36%;
         }
+    
         &:nth-child(6) {
             flex: 0 1 10.86%;
         }
+    
         &:nth-child(7) {
             flex: 0 1 8.55%;
         }
+    
         &:nth-child(8) {
             flex: 0 1 10.86%;
         }
+    
         &:nth-child(9) {
             flex: 0 1 8.96%;
         }
+    
         &:nth-child(10) {
             flex: 0 1 9.05%;
         }
+    
         &:nth-child(11) {
-            flex: 0 1 40px;
+            flex: 0 1 3.29%;
         }
     }
 
@@ -1889,7 +1972,7 @@ body {
     }
 }
 
-@media(max-width: 1300px) {
+@media(max-width: 1366px) {
     .payments {
         &__table {
             overflow-x: auto;
@@ -1897,7 +1980,7 @@ body {
 
         &__table-header,
         &__table-content {
-            width: 1216px;
+            min-width: 1216px;
         }
     }
 }
@@ -2019,9 +2102,26 @@ body {
 }
 // PAYOUTS
 .payouts {
-    &__table-content {
-        height: calc(100vh - 224px);
+    &__table {
+        height: calc(100vh - 180px);
         overflow-y: auto;
+    }
+
+    &__table-header {
+        position: sticky;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        background-color: #FFFFFF;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($gray-light, 0.15);
+        }
     }
 
     &__table-header .payouts__table-item {
@@ -2039,6 +2139,11 @@ body {
             width: 100%;
             height: 1px;
             background-color: $gray-light;
+        }
+        &:last-child {
+            &::before {
+                height: 0;
+            }
         }
     }
 
@@ -2075,7 +2180,7 @@ body {
         &:nth-child(1) {
             flex: 0 1 8.06%;
         }
-        
+    
         &:nth-child(2) {
             flex: 0 1 6.74%;
         }
@@ -2099,15 +2204,15 @@ body {
         &:nth-child(7) {
             flex: 0 1 12.17%;
         }
-
+    
         &:nth-child(8) {
             flex: 0 1 14.47%;
         }
-
+    
         &:nth-child(9) {
             flex: 0 1 10.86%;
         }
-
+    
         &:nth-child(10) {
             flex: 0 1 3.13%;
         }
@@ -2118,7 +2223,7 @@ body {
     }
 }
 
-@media(max-width: 1300px) {
+@media(max-width: 1366px) {
     .payouts {
         &__table {
             overflow-x: auto;
@@ -2126,7 +2231,7 @@ body {
 
         &__table-header,
         &__table-content {
-            width: 1216px;
+            min-width: 1216px;
         }
     }
 }
