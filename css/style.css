@@ -683,9 +683,14 @@ body.open {
     transform: translateX(50%);
   }
 }
+@media (max-width: 992px) {
+  .filter__block {
+    top: 120px;
+  }
+}
 @media (max-width: 767px) {
   .filter__block {
-    top: 140px;
+    top: 174px;
     width: 92%;
   }
   .filter__fields {
@@ -699,6 +704,85 @@ body.open {
   }
   .filter__fields {
     grid-template-columns: 1fr;
+  }
+}
+.currencies.open .currencies__button-icon {
+  transform: rotate(180deg);
+}
+.currencies.open .currencies__list {
+  top: 8px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.currencies__block {
+  position: relative;
+}
+.currencies__button-icon {
+  transition: all 0.3s ease;
+}
+.currencies__list {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  min-width: 210px;
+  max-width: 210px;
+  max-height: 260px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 16px;
+  border: 1px solid #E5E6E8;
+  background: #FFFFFF;
+  box-shadow: 0px 6px 34px 0px rgba(22, 24, 25, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.currencies__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  width: 100%;
+}
+.currencies__item-title, .currencies__item-value {
+  font-size: 14px;
+  font-weight: 450;
+  line-height: 20px;
+}
+.currencies__item-title {
+  color: #8A8E98;
+}
+
+@media (max-width: 992px) {
+  .currencies__list {
+    left: -30%;
+  }
+}
+@media (max-width: 767px) {
+  .currencies {
+    order: 1;
+  }
+}
+@media (max-width: 576px) {
+  .currencies {
+    flex: 1 1 100%;
+  }
+  .currencies__button {
+    min-width: 100%;
+    max-width: 100%;
+    justify-content: space-between;
+  }
+  .currencies__list {
+    left: 0;
+    min-width: 100%;
+    max-width: 100%;
   }
 }
 .tooltip {
@@ -1669,13 +1753,24 @@ body.open {
   gap: 8px;
 }
 
+@media (max-width: 992px) {
+  .payments-header {
+    flex-wrap: wrap;
+  }
+  .payments-filters {
+    flex: 0 0 100%;
+    justify-content: flex-start;
+  }
+}
 @media (max-width: 767px) {
   .payments-filters {
-    justify-content: flex-end;
-    flex: 1 1 45%;
+    flex: 1 0 auto;
+  }
+  .payments-filters .search {
+    width: 100%;
   }
   .payments-buttons {
-    flex: 1 1 45%;
+    flex: 1 1 100%;
   }
   .payments-buttons__icon {
     display: none;
@@ -1699,6 +1794,9 @@ body.open {
 }
 @media (max-width: 576px) {
   .payments-buttons {
+    flex: 1 1 100%;
+  }
+  .payments-filters {
     flex: 1 1 100%;
   }
   .payments-filters .filter {
@@ -2104,6 +2202,9 @@ body.open {
 .settings__info .input {
   width: 360px;
 }
+.settings__form .labels {
+  margin-bottom: 20px;
+}
 .settings__form .button {
   min-width: 140px;
 }
@@ -2183,6 +2284,38 @@ body.open {
 .settings__sessions-current {
   opacity: 0;
 }
+.settings__bot {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 360px;
+  margin-bottom: 24px;
+  padding: 8px 16px 12px 16px;
+  border-radius: 16px;
+  background: rgba(229, 230, 232, 0.3);
+  transition: all 0.3s ease;
+}
+@media (any-hover: hover) {
+  .settings__bot:hover {
+    background: rgba(229, 230, 232, 0.4);
+  }
+}
+.settings__bot-icon img {
+  filter: drop-shadow(0px 0.1594593674px 0.1395269483px rgba(43, 171, 238, 0.08)) drop-shadow(0px 0.362304002px 0.3170159757px rgba(43, 171, 238, 0.11)) drop-shadow(0px 0.6305740476px 0.5517522693px rgba(43, 171, 238, 0.14)) drop-shadow(0px 1.001724124px 0.8765086532px rgba(43, 171, 238, 0.17)) drop-shadow(0px 1.54558599px 1.3523876667px rgba(43, 171, 238, 0.19)) drop-shadow(0px 2.4117658138px 2.1102950573px rgba(43, 171, 238, 0.22)) drop-shadow(0px 4.00390625px 3.5034182072px rgba(43, 171, 238, 0.25)) drop-shadow(0px 8px 7px rgba(43, 171, 238, 0.33));
+}
+.settings__bot-title {
+  padding-top: 4px;
+  margin-bottom: 4px;
+  color: rgba(138, 142, 152, 0.8);
+  font-size: 12px;
+  line-height: 12px;
+}
+.settings__bot-subtitle {
+  color: #161819;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
 
 @media (min-width: 767px) {
   .settings {
@@ -2235,7 +2368,7 @@ body.open {
   .settings__info .input {
     width: 100%;
   }
-  .settings__button {
+  .settings__button, .settings__bot {
     width: 100%;
   }
 }

@@ -3,11 +3,6 @@
 @import "variables.scss";
 
 // BASE
-// * {
-//     scrollbar-color: rgba($gray-dark, 0.8) rgba($gray-light, 0.8);
-//     scrollbar-width: thin;
-// }
-
 body {
     font-family: "Suisse Int'l";
     font-size: 16px;
@@ -18,20 +13,6 @@ body {
         overflow: hidden;
     }
 }
-
-// body::-webkit-scrollbar {
-//     width: 8px;
-// }
-
-// body::-webkit-scrollbar-track {
-//     border-radius: 4px;
-//     background-color: rgba($gray-light, 0.8);
-// }
-
-// body::-webkit-scrollbar-thumb {
-//     border-radius: 4px;
-//     background-color: rgba($gray-dark, 0.8)
-// }
 
 .wrapper {
     position: relative;
@@ -670,10 +651,18 @@ body {
   }
 }
 
+@media(max-width: 992px) {
+    .filter {
+        &__block {
+            top: 120px;
+        }
+    }
+}
+
 @media(max-width: 767px) {
     .filter {
         &__block {
-            top: 140px;
+            top: 174px;
             width: 92%;
         }
 
@@ -691,6 +680,103 @@ body {
         }
         &__fields {
             grid-template-columns: 1fr;
+        }
+    }
+}
+
+.currencies {
+    &.open {
+        .currencies__button-icon {
+            transform: rotate(180deg);
+        }
+        .currencies__list {
+            top: 8px;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
+    }
+
+    &__block {
+        position: relative;
+    }
+
+    &__button-icon {
+        transition: all 0.3s ease;
+    }
+
+    &__list {
+        position: absolute;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        min-width: 210px;
+        max-width: 210px;
+        max-height: 260px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 6px;
+        border-radius: 16px;
+        border: 1px solid $gray-light;
+        background: $white;
+        box-shadow: 0px 6px 34px 0px rgba($black, 0.12);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 12px;
+        width: 100%;
+    }
+
+    &__item-title,
+    &__item-value {
+        font-size: 14px;
+        font-weight: 450;
+        line-height: 20px;
+    }
+
+    &__item-title {
+        color: $gray-dark;
+    }
+}
+
+@media(max-width: 992px) {
+  .currencies {
+    &__list {
+        left: -30%;
+    }
+  }
+}
+
+@media(max-width: 767px) {
+  .currencies {
+    order: 1;
+  }
+}
+
+@media(max-width: 576px) {
+    .currencies {
+        flex: 1 1 100%;
+
+        &__button {
+            min-width: 100%;
+            max-width: 100%;
+            justify-content: space-between;
+        }
+
+        &__list {
+            left: 0;
+            min-width: 100%;
+            max-width: 100%;
         }
     }
 }
@@ -1811,14 +1897,26 @@ body {
     gap: 8px;
 }
 
+@media(max-width: 992px) {
+  .payments-header {
+    flex-wrap: wrap;
+  }
+  .payments-filters {
+    flex: 0 0 100%;
+    justify-content: flex-start;
+  }
+}
+
 @media(max-width: 767px) {
     .payments-filters {
-        justify-content: flex-end;
-        flex: 1 1 45%;
+        flex: 1 0 auto;
+        .search {
+            width: 100%;
+        }
     }
 
     .payments-buttons {
-        flex: 1 1 45%;
+        flex: 1 1 100%;
         &__icon {
             display: none;
         }
@@ -1853,6 +1951,7 @@ body {
   }
 
   .payments-filters {
+    flex: 1 1 100%;
     .filter {
         flex: 0 1 auto;
     }
@@ -2379,8 +2478,13 @@ body {
         }
     }
 
-    &__form .button {
-        min-width: 140px;
+    &__form {
+        .labels {
+            margin-bottom: 20px;
+        }
+        .button {
+            min-width: 140px;
+        }
     }
 
     &__title {
@@ -2468,6 +2572,44 @@ body {
     &__sessions-current {
         opacity: 0;
     }
+
+    &__bot {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        width: 360px;
+        margin-bottom: 24px;
+        padding: 8px 16px 12px 16px;
+        border-radius: 16px;
+        background: rgba($gray-light, 0.30);
+        transition: all 0.3s ease;
+        @media(any-hover:hover) {
+        &:hover {
+            background: rgba($gray-light, 0.40);
+          }
+        }
+    }
+
+    &__bot-icon {
+        img {
+            filter: drop-shadow(0px 0.15945936739444733px 0.13952694833278656px rgba(43, 171, 238, 0.08)) drop-shadow(0px 0.3623040020465851px 0.31701597571372986px rgba(43, 171, 238, 0.11)) drop-shadow(0px 0.6305740475654602px 0.5517522692680359px rgba(43, 171, 238, 0.14)) drop-shadow(0px 1.001724123954773px 0.8765086531639099px rgba(43, 171, 238, 0.17)) drop-shadow(0px 1.5455859899520874px 1.3523876667022705px rgba(43, 171, 238, 0.19)) drop-shadow(0px 2.4117658138275146px 2.110295057296753px rgba(43, 171, 238, 0.22)) drop-shadow(0px 4.00390625px 3.503418207168579px rgba(43, 171, 238, 0.25)) drop-shadow(0px 8px 7px rgba(43, 171, 238, 0.33));
+        }
+    }
+
+    &__bot-title {
+        padding-top: 4px;
+        margin-bottom: 4px;
+        color: rgba($gray-dark, 0.80);
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    &__bot-subtitle {
+        color: $black;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+    }
 }
 
 @media(min-width: 767px) {
@@ -2533,7 +2675,8 @@ body {
             width: 100%;
         }
 
-        &__button {
+        &__button,
+        &__bot {
             width: 100%;
         }
     }
